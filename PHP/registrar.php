@@ -1,3 +1,9 @@
+<?php
+
+require "Clases/clase_registrar.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="es-ES">
 
@@ -9,7 +15,7 @@
     <link rel="stylesheet" href="../Frameworks/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleIniciarSesion.css">
+    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleRegistar.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="../Frameworks/JQuery.js"></script>
 </head>
@@ -28,7 +34,7 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-chalkboard"></i>
+                        <a class="nav-link" href="Plantillas/plantillasInfo.html"><i class="fas fa-chalkboard"></i>
                             Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
@@ -54,37 +60,40 @@
     <div class="container cuerpo">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="fas fa-user"></i> Iniciar sesión</h1>
-                <p>Al iniciar sesión en nuestra plataforma optas a crear tus propias composiciones de forma muy sencilla.</p>
-
-                <?php
-                    if (isset($_POST['send'])) {
-                        if ($_POST['usuario'] == '' || $_POST['pass'] == '') {
-                            echo 'No debe haber campos vacíos';
-                        }
-                    }
-                ?>
-
-                <form action="comprobarUsuario.php" name="login" method="post" id="formSesion">
-                    <label for="usuario">Usuario</label>
+                <h1><i class="fas fa-user-plus"></i> Registro en EasyWEB</h1>
+                <p>Al crear un perfil en EasyWEB accedes a la creacción de tus propios diseños y compartir tus dudas y comentarios en nuestro foro</p>
+                <form action="registrar.php" name="registro" method="post" id="formSesion">
+                    <label for="usuario">Usuario (*)</label>
                     <input type="text" name="usuario" id="usuario">
-                    <label for="pass">Contraseña</label>
+                    <label for="nombre">Nombre (*)</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <label for="apellido1">Primer apellido (*)</label>
+                    <input type="text" name="apellido1" id="apellido1">
+                    <label for="apellido2">Segundo apellido</label>
+                    <input type="text" name="apellido2" id="apellido2">
+                    <label for="email">E-Mail (*)</label>
+                    <input type="text" name="email" id="email">
+                    <label for="pass">Contraseña (*)</label>
                     <input type="password" name="pass" id="pass">
                     <input type="button" value="Borrar campos" id="btnReset">
-                    <input type="submit" value="Iniciar sesión" name="send">
-                </form>
-                <div id="avisoRegistro">
-                    <p>Si todavía no tienes cuenta en EasyWEB</p>
-                    <a href="registrar.php"><button>Resgistrate aquí</button></a>
-                </div>
+                    <input type="submit" value="Registrarse">
+                    <p>Los campos marcados con * son obligatorios de completar.</p>
+                </form>  
                 
+                <?php
+
+                    if (isset($_POST['registro'])) { 
+                        $usuario = $_POST['usuario'];
+                        
+                    }
+
+                ?>
             </div>
         </div>
     </div>
 
 
-
-    <script src="../JavaScript/logIn.js"></script>
+    <script src="../JavaScript/registro.js"></script>
 </body>
 
 </html>

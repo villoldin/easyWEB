@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="Frameworks/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="StyleSheets/CSS_Compiled/styleHome.css">
+    <link rel="stylesheet" href="StyleSheets/CSS_Compiled/styleHomeLog.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="Frameworks/JQuery.js"></script>
 </head>
@@ -37,10 +37,8 @@
                     </li>
                 </ul>
                 <ul id="logIn">
-                    <li><a class="nav-link" href="Páginas/iniciarSesion.php"><i class="fas fa-user"></i> Iniciar
-                            sesión</a></li>
-                    <li><a class="nav-link" href="Páginas/registrar.php"><i class="fas fa-user-plus"></i>
-                            Registrarse</a></li>
+                    <li><a class="nav-link" href=""><i class="fas fa-user"></i> Mi perfil</a></li>
+                    <li><a class="nav-link" href="PHP/Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
                 </ul>
 
             </div>
