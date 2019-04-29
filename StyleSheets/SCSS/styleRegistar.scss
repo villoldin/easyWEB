@@ -1,0 +1,17 @@
+@import "styleMenuHeader.scss";
+
+h1 {
+    @include estiloTitulo;
+}
+
+.cuerpo > .row > .col-md-12 {
+    @include centrarFlex;
+    @include formulario;
+
+    form  p {
+        margin-top: 40px;
+        margin-bottom: 0;
+        font-weight: bolder;
+
+    }
+}

@@ -1,0 +1,33 @@
+.navbar {
+  background: #75C5D9 !important;
+  box-shadow: 0px 0px 40px 0px black;
+  margin-bottom: 30px;
+}
+
+.navbar .navbar-brand > img {
+  height: 40px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.navbar #logIn {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar #logIn > li > a.nav-link {
+  color: black;
+}
+
+.navbar li:hover {
+  transform: scale(1.1);
+}
+
+#menuLateral {
+  background: #75C5D9;
+  border: solid 1px black;
+}

@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+header, #cuerpo, #menuHorizontal, footer {
+    border: solid 1px black;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;   
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+}
+
+#menuHorizontal {
+    width: 100%;
+    height: 10%;
+    border: 1px solid black;
+}
+
+#cuerpo {
+    width: 100%;
+    height: 70%;
+}
+
+footer {
+    width: 100%;
+    height: 5%;
+}

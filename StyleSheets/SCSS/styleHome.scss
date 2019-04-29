@@ -1,0 +1,55 @@
+@import "styleMenuHeader.scss";
+
+h1 {
+    @include estiloTitulo;
+}
+
+.cuerpo {
+
+    .row>p {
+        margin-bottom: 70px;
+    }
+    
+}
+
+#prevPlantillas {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 70px;
+    
+    div {
+        width: 15%;
+        min-width: 200px;
+        padding: 5px;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border: 2px solid $colorPrincipal;
+        border-radius: 20px;
+    }
+
+    div:hover {
+        transform: scale(1.1);
+    }
+
+    div > p {
+        color: $colorPrincipal;
+        font-weight: bolder;
+        width: 100%;
+        padding-bottom: 5px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: solid 2px $colorPrincipal;
+    }
+
+    div > iframe {
+        margin: auto;
+        padding-bottom: 5px;
+        
+    }
+
+}
