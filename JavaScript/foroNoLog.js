@@ -10,4 +10,4 @@ var foroLog = document.getElementById('foroLog');
 var foroNoLog = document.getElementById('foroNoLog');
 
 $(foroLog).css('display', 'none');
-$(foroNoLog).css('display', 'block');
+$(foroNoLog).css('display', 'flex');

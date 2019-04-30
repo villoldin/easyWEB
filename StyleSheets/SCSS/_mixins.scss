@@ -38,7 +38,7 @@
         border-radius: 20px;
     
         label {
-            width: 30%;
+            width: 35%;
             margin-bottom: 20px;
             font-size: 120%;
             color: $colorPrincipal;
@@ -46,7 +46,7 @@
         }
     
         input[type=text], input[type=password] {
-            width: 70%;
+            width: 65%;
             margin-bottom: 10px;       
             height: 32px;
             border: solid 2px $colorPrincipal;
@@ -76,4 +76,38 @@
         }
     }
 
+}
+
+@mixin mensajeError {
+    width: 70%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+    background: $colorPrincipal;
+    border-radius: 20px;
+    -webkit-animation: tiembla 0.15s 4;
+
+    p {
+        margin: 0px;
+        font-size: 16px;
+    }
+
+}
+
+@mixin mensajeCorrecto {
+    width: 70%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+    background: rgb(17, 146, 17);
+    border-radius: 20px;
+    -webkit-animation: tiembla 0.15s 4;
+
+    p {
+        margin: 0px;
+        font-size: 16px;
+    }
+    
 }

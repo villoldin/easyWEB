@@ -15,3 +15,17 @@ h1 {
 
     }
 }
+
+.error {
+    @include mensajeError;
+}
+
+.correcto {
+    @include mensajeCorrecto;
+}
+
+@-webkit-keyframes tiembla{
+    0%  { -webkit-transform:rotateZ(-5deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
+    100%{ -webkit-transform:rotateZ( 5deg); }
+}

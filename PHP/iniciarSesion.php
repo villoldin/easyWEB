@@ -63,7 +63,7 @@
                 <?php
                     if (isset($_POST['send'])) {
                         if ($_POST['usuario'] == '' || $_POST['pass'] == '') {
-                            echo 'No debe haber campos vacíos';
+                            echo '<div class="error"><p>No puede haber campos vacíos</p></div>';
                         }
                     }
                 ?>

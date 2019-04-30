@@ -1,6 +1,6 @@
 <?php
 
-    require "../../../Conexion/conexion.php";
+    require_once ("C:\\xampp\\htdocs\\easyWEB\\Conexion\\conexion.php");
 
     class Perfil extends Conexion {
 
@@ -11,7 +11,7 @@
         // Mostrar datos del usuario
 
         public function datosUsuario($user) {
-            $sql = "SELECT COUNT(*) FROM USUARIOS WHERE USUARIO=\"$user\"";
+            $sql = "SELECT * FROM USUARIOS WHERE USUARIO=\"$user\"";
             $resultado = $this->conexion_db->query($sql);
             $datos = $resultado->fetch_all(MYSQLI_ASSOC);
             return $datos;

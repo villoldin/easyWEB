@@ -42,8 +42,8 @@
                     </li>
                 </ul>
                 <ul id="logIn">                    
-                    <li class="log"><a class="nav-link" href="#"><i class="fas fa-user"></i> Mi perfil</a></li>
-                    <li class="log"><a class="nav-link" href="Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
+                    <li class="noLog"><a class="nav-link" href="iniciarSesion.php"><i class="fas fa-user"></i> Iniciar sesión</a></li>
+                    <li class="noLog"><a class="nav-link" href="registrar.php"><i class="fas fa-user-plus"></i> Registrarse</a></li>
                 </ul>
             </div>
         </nav>
@@ -70,13 +70,13 @@
                     <label for="pass">Confirmar contraseña (*)</label>
                     <input type="password" name="confPass" id="confPass">
                     <input type="button" value="Borrar campos" id="btnReset">
-                    <input type="submit" value="Registrarse">
+                    <input type="submit" value="Registrarse" name="btnRegistro">
                     <p>Los campos marcados con * son obligatorios de completar.</p>
                 </form>  
                 
                 <?php
 
-                    if (isset($_POST['registro'])) { 
+                    if (isset($_POST['btnRegistro'])) { 
                         $usuario = $_POST['usuario'];
                         $nombre = $_POST['nombre'];
                         $ape1 = $_POST['apellido1'];
@@ -87,18 +87,18 @@
 
                         $existeUsuario = $objetoRegistro->existeUsuario($usuario);
                         $existeMail = $objetoRegistro->existeMail($email);
-                        $mailValido = $objetoRegistro->mailValido($email);
+                        //$mailValido = $objetoRegistro->mailValido($email);
 
                         if ($usuario == '' || $nombre == '' || $ape1 == '' || $email == '' || $pass == '' || $confPass == '') {
                             echo '<div class="error"><p>No puede haber campos vacíos</p></div>';
                         } else {
-                            if ($existeUsuario[0]['cont'] != 0) {
+                            if ($existeUsuario === true) {
                                 echo '<div class="error"><p>Usuario ya registrado en easyWEB</p></div>';
-                            } else if ($existeMail[0]['cont'] != 0) {
+                            } else if ($existeMail === true) {
                                 echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
-                            } else if ($mailValido != 1) {
+                            } /*else if ($mailValido != 1) {
                                 echo '<div class="error"><p>El formato del eMail no es correcto</p></div>';
-                            } else if ($pass != $confPass) {
+                            } */else if ($pass != $confPass) {
                                 echo '<div class="error"><p>Contraseñas diferentes</p></div>';
                             } else {
                                 $registroUsuario = $objetoRegistro->registrarUsuario($usuario, $nombre, $ape1, $ape2, $email, $pass);

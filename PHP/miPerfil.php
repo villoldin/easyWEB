@@ -1,9 +1,11 @@
 <?php
     
-    require "Clases/MiPerfil/clase_perfil.php";
+    require "./Clases/MiPerfil/clase_perfil.php";
 
     $miPerfil = new Perfil();
-    
+    $usuario =$_COOKIE['usuario'];
+
+    error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -53,17 +55,22 @@
         <div class="row">
             <div class="col-md-12">
                 <h1><i class="fas fa-user"></i> Mi perfil</h1>
+
+                <?php
+                    $infoPerfil = $miPerfil->datosUsuario($usuario);
+                ?>
+
                 <form action="miPerfil.php" name="datosPerfil" method="post">
                     <label for="usuario">Usuario</label>
-                    <input type="text" name="usuario" id="usuario" disabled>
+                    <input type="text" name="usuario" id="usuario" value="<?php echo $infoPerfil[0]['Usuario']?>" disabled>
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" disabled>
+                    <input type="text" name="nombre" id="nombre" value="<?php echo $infoPerfil[0]['Nombre']?>" disabled>
                     <label for="apellido1">Primer apellido</label>
-                    <input type="text" name="apellido1" id="apellido1" disabled>
+                    <input type="text" name="apellido1" id="apellido1" value="<?php echo $infoPerfil[0]['Apellido1']?>" disabled>
                     <label for="apellido2">Segundo apellido</label>
-                    <input type="text" name="apellido2" id="apellido2" disabled>
+                    <input type="text" name="apellido2" id="apellido2" value="<?php echo $infoPerfil[0]['Apellido2']?>" disabled>
                     <label for="email">E-Mail</label>
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" value="<?php echo $infoPerfil[0]['EMail']?>">
                     <label for="email">Publicaciones</label>
                     <input type="text" name="publicaciones" id="publicaciones" disabled>
                     <input type="submit" name="btnEditar" value="Editar email">
