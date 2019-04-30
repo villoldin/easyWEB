@@ -1,0 +1,76 @@
+@import "styleMenuHeader.scss";
+
+h1 {
+    @include estiloTitulo;
+}
+
+#formPublicacion {
+    @include centrarFlex;
+    width: 100%;
+
+    form {
+        width: 100%;
+    }
+
+    #publicacion {
+        width: 89%;
+        margin-bottom: 10px;       
+        height: 50px;
+        border: solid 2px $colorPrincipal;
+        border-radius: 20px;
+        padding-left: 10px;
+
+    }
+
+    #publicar {
+        width: 10%;
+        padding: 5px;
+        height: 50px;
+        background: $colorPrincipal;
+        color: white;
+        border: solid 2px $colorPrincipal;
+        border-radius: 20px;
+    }
+
+    #publicar:hover {
+        background: white;
+        color: $colorPrincipal;
+    }
+
+}
+
+#publicaciones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+
+       #usuario {
+           color: $colorPrincipal;
+           width: 80%;
+           font-weight: bold;
+       }
+
+       #fecha {
+           width: 20%;
+           text-align: right;
+       }
+    
+        #publicacion {
+            width: 100%;
+            margin: 0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid $colorPrincipal;
+        }
+
+}
+
+.error {
+    @include mensajeError;
+}
+
+.correcto {
+    @include mensajeCorrecto;
+}
