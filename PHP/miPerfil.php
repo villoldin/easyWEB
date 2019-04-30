@@ -1,9 +1,9 @@
 <?php
+    
+    require "Clases/MiPerfil/clase_perfil.php";
 
-    require "Clases/Registrar/clase_registrar.php";
-
-    $objetoRegistro = new Registro();
-
+    $miPerfil = new Perfil();
+    
 ?>
 
 <!DOCTYPE html>
@@ -52,67 +52,48 @@
     <div class="container cuerpo">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="fas fa-user-plus"></i> Registro en EasyWEB</h1>
-                <p>Al crear un perfil en EasyWEB accedes a la creacción de tus propios diseños y compartir tus dudas y comentarios en nuestro foro</p>
-                <form action="registrar.php" name="registro" method="post" id="formSesion">
-                    <label for="usuario">Usuario (*)</label>
-                    <input type="text" name="usuario" id="usuario">
-                    <label for="nombre">Nombre (*)</label>
-                    <input type="text" name="nombre" id="nombre">
-                    <label for="apellido1">Primer apellido (*)</label>
-                    <input type="text" name="apellido1" id="apellido1">
+                <h1><i class="fas fa-user"></i> Mi perfil</h1>
+                <form action="miPerfil.php" name="datosPerfil" method="post">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" name="usuario" id="usuario" disabled>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" disabled>
+                    <label for="apellido1">Primer apellido</label>
+                    <input type="text" name="apellido1" id="apellido1" disabled>
                     <label for="apellido2">Segundo apellido</label>
-                    <input type="text" name="apellido2" id="apellido2">
-                    <label for="email">E-Mail (*)</label>
+                    <input type="text" name="apellido2" id="apellido2" disabled>
+                    <label for="email">E-Mail</label>
                     <input type="text" name="email" id="email">
-                    <label for="pass">Contraseña (*)</label>
-                    <input type="password" name="pass" id="pass">
-                    <label for="pass">Confirmar contraseña (*)</label>
-                    <input type="password" name="confPass" id="confPass">
-                    <input type="button" value="Borrar campos" id="btnReset">
-                    <input type="submit" value="Registrarse">
-                    <p>Los campos marcados con * son obligatorios de completar.</p>
-                </form>  
-                
+                    <label for="email">Publicaciones</label>
+                    <input type="text" name="publicaciones" id="publicaciones" disabled>
+                    <input type="submit" name="btnEditar" value="Editar email">
+                </form>
+
                 <?php
 
-                    if (isset($_POST['registro'])) { 
-                        $usuario = $_POST['usuario'];
-                        $nombre = $_POST['nombre'];
-                        $ape1 = $_POST['apellido1'];
-                        $ape2 = $_POST['apellido2'];
-                        $email = $_POST['email'];
-                        $pass = $_POST['pass'];
-                        $confPass = $_POST['confPass'];
+                    $existeMail = $miPerfil->existeMail($_POST['email']);
+                    $mailValido = $miPerfil->mailValido($_POST['email']);
 
-                        $existeUsuario = $objetoRegistro->existeUsuario($usuario);
-                        $existeMail = $objetoRegistro->existeMail($email);
-                        $mailValido = $objetoRegistro->mailValido($email);
 
-                        if ($usuario == '' || $nombre == '' || $ape1 == '' || $email == '' || $pass == '' || $confPass == '') {
-                            echo '<div class="error"><p>No puede haber campos vacíos</p></div>';
-                        } else {
-                            if ($existeUsuario[0]['cont'] != 0) {
-                                echo '<div class="error"><p>Usuario ya registrado en easyWEB</p></div>';
-                            } else if ($existeMail[0]['cont'] != 0) {
+                    if (isset($_POST['btnEditar'])) {
+                        if(empty($_POST['email'])) {
+                            echo "<p class='error'>No puede haber ningun campo vacio</p>";
+                        } else {    
+                            if ($existeMail[0]['cont'] != 0) {
                                 echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
                             } else if ($mailValido != 1) {
                                 echo '<div class="error"><p>El formato del eMail no es correcto</p></div>';
-                            } else if ($pass != $confPass) {
-                                echo '<div class="error"><p>Contraseñas diferentes</p></div>';
                             } else {
-                                $registroUsuario = $objetoRegistro->registrarUsuario($usuario, $nombre, $ape1, $ape2, $email, $pass);
+                                $edicionMail = $miPerfil->editarMail($_POST['email']);
                             }
                         }
                     }
 
-                ?>
+                ?>           
+
             </div>
         </div>
     </div>
-
-
-    <script src="../JavaScript/registro.js"></script>
 </body>
 
 </html>

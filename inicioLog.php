@@ -37,19 +37,16 @@
                 <a class="navbar-brand" href="index.php">EasyWEB</a>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio<span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
-                    </li>
+                        <a class="nav-link" href="PHP/crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a></li>
                     <li class="nav-item">
-                            <a class="nav-link" href=""><i class="far fa-comments"></i>
-                                Foro</a>
+                            <a class="nav-link" href="PHP/foro.php"><i class="far fa-comments"></i> Foro</a>
                     </li>
                 </ul>
                 <ul id="logIn">
-                    <li><a class="nav-link" href=""><i class="fas fa-user"></i> Mi perfil</a></li>
+                    <li><a class="nav-link" href="PHP/miPerfil.php"><i class="fas fa-user"></i> Mi perfil</a></li>
                     <li><a class="nav-link" href="PHP/Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
                 </ul>
 

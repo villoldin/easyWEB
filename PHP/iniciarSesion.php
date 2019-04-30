@@ -36,27 +36,18 @@
                 <a class="navbar-brand" href="../index.php">EasyWEB</a>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-chalkboard"></i>
-                            Crea tu propia WEB</a>
+                        <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><i class="far fa-comments"></i>
-                            Foro</a>
+                        <a class="nav-link" href="foro.php"><i class="far fa-comments"></i> Foro</a>
                     </li>
                 </ul>
                 <ul id="logIn">
-                    <li class="noLog"><a class="nav-link" href="iniciarSesion.php"><i class="fas fa-user"></i> Iniciar
-                            sesión</a></li>
-                    <li class="noLog"><a class="nav-link" href="registrar.php"><i class="fas fa-user-plus"></i>
-                            Registrarse</a></li>
-                    <li class="log"><a class="nav-link" href=""><i class="fas fa-user"></i> Mi perfil</a>
-                    </li>
-                    <li class="log"><a class="nav-link" href=""><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a>
-                    </li>
+                    <li class="noLog"><a class="nav-link" href="iniciarSesion.php"><i class="fas fa-user"></i> Iniciar sesión</a></li>
+                    <li class="noLog"><a class="nav-link" href="registrar.php"><i class="fas fa-user-plus"></i> Registrarse</a></li>
                 </ul>
 
             </div>
@@ -67,7 +58,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1><i class="fas fa-user"></i> Iniciar sesión</h1>
-                <p>Al iniciar sesión en nuestra plataforma optas a crear tus propias composiciones de forma muy sencilla.</p>
+                <p>Para poder disfrutar del servicio de "Crea tu propia WEB" y publicar en nuestro foro debe usted estar registrado</p>
 
                 <?php
                     if (isset($_POST['send'])) {

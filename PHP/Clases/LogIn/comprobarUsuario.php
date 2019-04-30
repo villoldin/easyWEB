@@ -6,15 +6,15 @@
    
         if (empty($_POST['usuario']) && empty($_POST['pass'])) {
             $error = "Usuario y contraseña no pueden estar vacios";
-            header("Location:../iniciarSesion.php?error=".urlencode($error)."");
+            header("Location: ../../iniciarSesion.php?error=".urlencode($error)."");
         } else if (empty($_POST['usuario'])) {
             $error = "Usuario vacio";
-            header("Location:../iniciarSesion.php");
-            header("Location:../iniciarSesion.php?error=".urlencode($error)."");
+            header("Location: ../../iniciarSesion.php");
+            header("Location: ../../iniciarSesion.php?error=".urlencode($error)."");
         } else if (empty($_POST['pass'])) {
             $error = "Contraseña vacia";
-            header("Location:../iniciarSesion.php");
-            header("Location:../iniciarSesion.php?error=".urlencode($error)."");
+            header("Location: ../../iniciarSesion.php");
+            header("Location: ../../iniciarSesion.php?error=".urlencode($error)."");
         } else {
             // Los datos se han enviado correctamente
 
