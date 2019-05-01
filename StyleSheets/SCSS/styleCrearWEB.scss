@@ -28,23 +28,54 @@ header {
     }
 
     #lienzo {
-        box-shadow: 0px 0px 25px -8px black;
-        width: 80%;
+        box-shadow: $sombraCaja;
+        width: 70%;
         height: 100%;
-        margin-left: 10%;
+        margin-left: 15%;
         min-height: 600px;
         max-height: 400px;
+    }
+
+    #generarCodigo {
+        margin-left: 25%;
+        width: 30%;
+        font-weight: bold;
+    }
+
+    #generarPDF {
+        width: 20%;
+        margin-top: 25px;
+        padding: 5px;
+        background: $colorPrincipal;
+        color: white;
+        border: solid 2px $colorPrincipal;
+        border-radius: 20px;
+    }
+
+    #generarPDF:hover {
+        background: white;
+        color: $colorPrincipal;   
+        box-shadow: $sombraCaja;
     }
 
 }
 
 #menuLateralContenido {
     background: $colorPrincipal;
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
     padding: 30px;
     color: white;
     margin-top: -50px;
     display: none;
+
+    .btnPasos {
+        display: none;
+        @include estiloBotonesPasos;
+    }
+
+    .btnPasos:hover {
+        @include estiloBotonesPasosHover;
+    }
 
     #plantillasDisponibles {
         width: 100%;
@@ -63,6 +94,7 @@ header {
             border-radius: 20px; 
             background: white;
             margin-bottom: 20px;
+            box-shadow: $sombraCaja;             
 
             p {
                 width: 100%;
@@ -72,6 +104,7 @@ header {
             }
 
         }
+
     }
 
 }

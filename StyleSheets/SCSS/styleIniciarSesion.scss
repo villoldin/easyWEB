@@ -37,7 +37,8 @@ h1 {
 
             button:hover {
                 background: white;
-                color: $colorPrincipal;              
+                color: $colorPrincipal;  
+                box-shadow: $sombraCaja;            
             }
 
        }

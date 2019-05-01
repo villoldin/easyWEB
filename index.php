@@ -57,9 +57,9 @@
 
     <div class="container cuerpo">
         <div class='row col-md-12'>
-            <h1>¿Qué es EasyWEB?</h1>
+            <h1><i class="fas fa-laptop-code"></i> ¿Qué es EasyWEB?</h1>
             <p>EasyWEB servicio con el que podrás editar plantillas para crear tu propio código HTML para implementarlo en tus proyectos.</p>
-            <h1>Plantillas</h1>
+            <h1><i class="fas fa-chalkboard"></i> Plantillas</h1>
             <div id="prevPlantillas">
                 <div id="Plantilla1">
                     <p>Plantilla 1</p>
@@ -82,7 +82,7 @@
                         scroll="no"></iframe>
                 </div>
             </div>
-            <h1>¿Cómo puedo usar EasyWEB?</h1>
+            <h1><i class="far fa-smile"></i> ¿Cómo puedo usar EasyWEB?</h1>
             <p>Para disfrutar de estos servicios solo tienes que crearte una cuenta gratuita en nuestra plataforma y... ¡ESO ES TODO!</p>
         </div>
 

@@ -35,6 +35,7 @@ h1 {
     #publicar:hover {
         background: white;
         color: $colorPrincipal;
+        box-shadow: $sombraCaja;
     }
 
 }
@@ -73,4 +74,10 @@ h1 {
 
 .correcto {
     @include mensajeCorrecto;
+}
+
+@-webkit-keyframes tiembla{
+    0%  { -webkit-transform:rotateZ(-5deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
+    100%{ -webkit-transform:rotateZ( 5deg); }
 }

@@ -1,5 +1,5 @@
 <?php
-    /*
+
     session_start();
 
     if (!isset($_SESSION['user'])) {
@@ -7,7 +7,7 @@
     }
 
     error_reporting(E_ERROR | E_PARSE);
-    */
+
 ?>
 
 <!DOCTYPE html>
@@ -63,29 +63,31 @@
         <div class='row'>
             <div class="col-md-12" id="menuCreacion">
                 <h1 class="container titulo"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</h1>
-                <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" id="lienzo">
+                <iframe src="" frameborder="0" id="lienzo">
 
                 </iframe>
+                <label id="generarCodigo">Pulsa aqui para generar el código que has creado </label><button id="generarPDF">Generar código</button>
             </div>
             <div class="col-md-0" id="menuLateral">
                 <div id="menuLateralContenido">
                     <div id="plantillasDisponibles">
-                        <div class="tarjetaPlantilla" id="plantilla1">
+                        <button class="btnPasos" id="hechoPlant">Siguiente</button>
+                        <div class="tarjetaPlantilla" id="Plantilla1">
                             <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" width="70%" height="70%"
                                 scroll="no"></iframe>
                         </div>
-                        <div class="tarjetaPlantilla" id="plantilla2">
+                        <div class="tarjetaPlantilla" id="Plantilla2">
                             <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla2.html" frameborder="0" width="70%" height="auto"
                                 scroll="no"></iframe>
                         </div>
-                        <div class="tarjetaPlantilla" id="plantilla3">
+                        <div class="tarjetaPlantilla" id="Plantilla3">
                             <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla3.html" frameborder="0" width="70%" height="auto"
                                 scroll="no"></iframe>
                         </div>
-                        <div class="tarjetaPlantilla" id="plantilla4">
+                        <div class="tarjetaPlantilla" id="Plantilla4">
                             <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla4.html" frameborder="0" width="70%" height="auto"
                                 scroll="no"></iframe>

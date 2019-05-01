@@ -32,41 +32,43 @@ var idPlantClicked = "";
 
 // Hacemos que las tarjetas de las plantillas sean arrastrables
 
-$("#plantilla1").draggable();
-$("#plantilla2").draggable();
-$("#plantilla3").draggable();
-$("#plantilla4").draggable();
+$("#Plantilla1").draggable();
+$("#Plantilla2").draggable();
+$("#Plantilla3").draggable();
+$("#Plantilla4").draggable();
 
 // Capturamos los id en la variable que habiamos creado
-$("#plantilla1").mousedown(function () {
+
+$("#Plantilla1").mousedown(function () {
     idPlantClicked = $(this).attr("id");
-    console.log(idPlantClicked);
-    console.log("HOLA");
 });
 
-$("#plantilla2").mousedown(function () {
+$("#Plantilla2").mousedown(function () {
     idPlantClicked = $(this).attr("id");
-    console.log(idPlantClicked);
 });
 
-$("#plantilla3").mousedown(function () {
+$("#Plantilla3").mousedown(function () {
     idPlantClicked = $(this).attr("id");
-    console.log(idPlantClicked);
 });
 
-$("#plantilla4").mousedown(function () {
+$("#Plantilla4").mousedown(function () {
     idPlantClicked = $(this).attr("id");
-    console.log(idPlantClicked);
 });
 
 // Hacemos que el lienzo sea dropeable
+
 $("#lienzo").droppable({
     drop: function (event, ui) {
-        $(this).attr('src', "../html/" + idPlantClicked + ".html");
+        $("#hechoPlant").css("display", "block");
+        $(this).attr('src', "../Plantillas/PlantillasHTML/" + idPlantClicked + ".html");
+        $(".tarjetaPlantilla").each(function(){
+            console.log(idPlantClicked);
+            if ($(this).attr('id') == idPlantClicked) {
+                $(this).css("display", "none");
+            } else {
+                $(this).css("display", "flex");
+            }
+        });
+        
     },
 });
-
-$("#lienzo header").click(function (e) { 
-    console.log("HOLA");   
-});
-

@@ -34,7 +34,7 @@
         width: 40vw;
         justify-content: space-around;
         padding: 30px;
-        border: solid 2px $colorPrincipal;
+        box-shadow: $sombraCaja;
         border-radius: 20px;
     
         label {
@@ -66,13 +66,14 @@
             color: white;
             border: solid 2px $colorPrincipal;
             border-radius: 20px;
-            margin-top: 15px;
+            margin-top: 15px;            
         }
     
         input[type=button]:hover, input[type=submit]:hover {
             background: white;
             color: $colorPrincipal;   
             margin-top: 15px;
+            box-shadow: $sombraCaja;
         }
     }
 
@@ -110,4 +111,18 @@
         font-size: 16px;
     }
     
+}
+
+@mixin estiloBotonesPasos {
+    padding: 5px;
+    background: white;
+    color: $colorPrincipal;
+    box-shadow: $sombraCaja;
+    border: 0;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+@mixin estiloBotonesPasosHover {
+    transform: scale(1.05);
 }
