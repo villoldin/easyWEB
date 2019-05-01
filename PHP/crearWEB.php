@@ -21,9 +21,10 @@
     <link rel="stylesheet" href="../Frameworks/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleHomeLog.css">
+    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleCrearWEB.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="../Frameworks/JQuery.js"></script>
+    <script src="../Frameworks/JQueryUI/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -48,8 +49,8 @@
                 <ul id="logIn">                    
                     <li class="log"><a class="nav-link" href="miPerfil.php"><i class="fas fa-user"></i> Mi perfil</a></li>
                     <li class="log"><a class="nav-link" href="Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
-                    <li><button id="mostrarMenu"><i class="fas fa-bars"></i></button></li>
-                    <li><button id="quitarMenu"><i class="fas fa-bars"></i></button></li>
+                    <li id="mostrarMenu"><button class="desplegarMenu"><i class="fas fa-bars"></i></button></li>
+                    <li id="quitarMenu"><button class="desplegarMenu"><i class="fas fa-bars"></i></button></li>
                 </ul>
             </div>
         </nav>
@@ -61,36 +62,35 @@
     <div class="cuerpoCreacionWEB">
         <div class='row'>
             <div class="col-md-12" id="menuCreacion">
-                <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" id="lienzo" width='100%'>
+                <h1 class="container titulo"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</h1>
+                <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" id="lienzo">
 
                 </iframe>
             </div>
             <div class="col-md-0" id="menuLateral">
                 <div id="menuLateralContenido">
-                    <p>Pantillas disponibles</p>
                     <div id="plantillasDisponibles">
-                        <div id="Plantilla1">
-                            <p>Plantilla 1</p>
-                            <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" width="70%" height="auto"
+                        <div class="tarjetaPlantilla" id="plantilla1">
+                            <p>Arrastra</p>
+                            <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" width="70%" height="70%"
                                 scroll="no"></iframe>
                         </div>
-                        <div id="Plantilla2">
-                            <p>Plantilla 2</p>
+                        <div class="tarjetaPlantilla" id="plantilla2">
+                            <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla2.html" frameborder="0" width="70%" height="auto"
                                 scroll="no"></iframe>
                         </div>
-                        <div id="Plantilla3">
-                            <p>Plantilla 3</p>
+                        <div class="tarjetaPlantilla" id="plantilla3">
+                            <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla3.html" frameborder="0" width="70%" height="auto"
                                 scroll="no"></iframe>
                         </div>
-                        <div id="Plantilla4">
-                            <p>Plantilla 4</p>
+                        <div class="tarjetaPlantilla" id="plantilla4">
+                            <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla4.html" frameborder="0" width="70%" height="auto"
                                 scroll="no"></iframe>
                         </div>
                     </div>
-                    <p>Arrastra para aplicar la plantilla que desees</p>
                 </div>                
             </div>
             

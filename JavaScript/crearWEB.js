@@ -25,3 +25,48 @@ $(btnQuitar).click(function (e) {
     $(menuLateralContenido).css('display', 'none');
     $(btnMostrar).css('display', 'block');
 });
+
+// ------------------- Soltar plantilla en el lienzo -------------------
+
+var idPlantClicked = "";
+
+// Hacemos que las tarjetas de las plantillas sean arrastrables
+
+$("#plantilla1").draggable();
+$("#plantilla2").draggable();
+$("#plantilla3").draggable();
+$("#plantilla4").draggable();
+
+// Capturamos los id en la variable que habiamos creado
+$("#plantilla1").mousedown(function () {
+    idPlantClicked = $(this).attr("id");
+    console.log(idPlantClicked);
+    console.log("HOLA");
+});
+
+$("#plantilla2").mousedown(function () {
+    idPlantClicked = $(this).attr("id");
+    console.log(idPlantClicked);
+});
+
+$("#plantilla3").mousedown(function () {
+    idPlantClicked = $(this).attr("id");
+    console.log(idPlantClicked);
+});
+
+$("#plantilla4").mousedown(function () {
+    idPlantClicked = $(this).attr("id");
+    console.log(idPlantClicked);
+});
+
+// Hacemos que el lienzo sea dropeable
+$("#lienzo").droppable({
+    drop: function (event, ui) {
+        $(this).attr('src', "../html/" + idPlantClicked + ".html");
+    },
+});
+
+$("#lienzo header").click(function (e) { 
+    console.log("HOLA");   
+});
+
