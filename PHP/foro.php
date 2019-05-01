@@ -48,7 +48,7 @@
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href=""><i class="far fa-comments"></i> Foro</a>
+                            <a class="nav-link" href=""><i class="far fa-comments"></i> Chat</a>
                     </li>
                 </ul>
                 <ul id="logIn">
@@ -68,7 +68,7 @@
     <div class="container cuerpo">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="far fa-comments"></i> Foro EasyWEB</h1>
+                <h1><i class="far fa-comments"></i> Chat EasyWEB</h1>
 
                 <!-- -
                 <div id="filtros">

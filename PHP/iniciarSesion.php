@@ -42,7 +42,7 @@
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="foro.php"><i class="far fa-comments"></i> Foro</a>
+                        <a class="nav-link" href="foro.php"><i class="far fa-comments"></i> Chat</a>
                     </li>
                 </ul>
                 <ul id="logIn">
