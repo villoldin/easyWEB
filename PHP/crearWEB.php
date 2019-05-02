@@ -93,6 +93,44 @@
                                 scroll="no"></iframe>
                         </div>
                     </div>
+                    <div id="headerDisponibles">
+                        <button class="btnPasos" id="hechoHeader">Siguiente</button>
+                        <div class="diseño apartados">
+                            <label for="headers">Diseño de Header</label>
+                            <select name="headers" id="headers">
+                                <option value="vacio">Vacío</option>
+                                <option value="header1">Imagen</option>
+                                <option value="header2">Imagen + menú</option>
+                                <option value="header3">Imagen + buscador</option>
+                            </select>
+                        </div>
+                        <div class="colores apartados">
+                            <label for="coloresHeader">Color del Header</label>
+                            <input type="text" class="inputTexto" name="coloresHeader" id="coloresHeader">
+                        </div>
+                        <div class="sombra apartados">
+                            <label>Sombra</label>
+                            <div id="opcionesSombra">
+                                <button id="sombraSi">Si</button>
+                                <button id="sombraNo">No</button>
+                            </div>
+                        </div>
+                        <div class="borde apartados">
+                            <label>Bordes</label>
+                            <div id="opcionesBorde">
+                                <button id="bordeSi">Si</button>
+                                <button id="bordeNo">No</button>
+                            </div>
+                        </div>
+                        <div class="colorFuente apartados">
+                            <label for="colorFuenteH">Color de la fuente</label>
+                            <input type="text" class="inputTexto" name="colorFuenteH" id="colorFuenteH">
+                        </div>
+                    </div>
+                    <div id="menuLateralDisponibles">
+                    </div>
+                    <div id="footerDisponibles">
+                    </div>
                 </div>                
             </div>
             

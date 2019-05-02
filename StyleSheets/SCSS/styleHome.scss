@@ -1,5 +1,13 @@
 @import "styleMenuHeader.scss";
 
+html {
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 100vw;
+}
+
 h1 {
     @include estiloTitulo;
 }
