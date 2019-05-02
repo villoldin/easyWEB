@@ -2,7 +2,7 @@
 
     require_once ("C:\\xampp\\htdocs\\easyWEB\\Conexion\\conexion.php");
 
-    class Foro extends Conexion {
+    class Chat extends Conexion {
 
         public function __contruct() {
             parent::__construct();

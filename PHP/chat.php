@@ -2,9 +2,9 @@
     
     session_start();
 
-    require "Clases/Foro/clase_foro.php";
+    require "Clases/Chat/clase_chat.php";
 
-    $objetoForo = new Foro();
+    $objetoChat = new Chat();
 
     if (isset($_SESSION['user'])) {
         $usuario=$_SESSION['user'];
@@ -73,7 +73,7 @@
                 <!-- -
                 <div id="filtros">
                     <label for="formularioOrden">Ordenar publicaciones por</label>
-                    <form action="foro.php" method="post" name="formularioOrden">
+                    <form action="chat.php" method="post" name="formularioOrden">
                         <select name="orden" id="orden">
                             <option value="nuevos">Más recientes</option>
                             <option value="antiguos">Más antiguos</option>
@@ -85,7 +85,7 @@
                 -->  
 
                 <div class='col-md-12' id='formPublicacion'>
-                    <form action="foro.php" method="post">
+                    <form action="chat.php" method="post">
                         <input type="text" name="publicacion" id="publicacion" placeholder="Escribe tu publicación ...">
                         <input type="submit" value="Publicar" name="btnPublicar" id="publicar">
                     </form>
@@ -100,7 +100,8 @@
                                 $fecha = date("Y-m-d");
                                 $horaActual = date("H:i:s");
                                 $fecha = date("Y-m-d H:i:s", strtotime($fecha . $horaActual));
-                                $publicar = $objetoForo->publicar($usuario, $publicacion, $fecha);
+                                $publicar = $objetoChat->publicar($usuario, $publicacion, $fecha);
+                                header('Location: chat.php');
                             }
                         }
                     ?>
@@ -109,7 +110,7 @@
                 <div id="publicaciones">                    
                     
                     <?php
-                        $publicaciones = $objetoForo->listarPubliFechaNuevas();
+                        $publicaciones = $objetoChat->listarPubliFechaNuevas();
                         
                         foreach ($publicaciones as $publi) {
                             echo "<p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p>";
