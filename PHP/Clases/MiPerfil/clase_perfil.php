@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     require_once ("C:\\xampp\\htdocs\\easyWEB\\Conexion\\conexion.php");
 
     class Perfil extends Conexion {

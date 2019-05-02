@@ -101,6 +101,7 @@
                                 $horaActual = date("H:i:s");
                                 $fecha = date("Y-m-d H:i:s", strtotime($fecha . $horaActual));
                                 $publicar = $objetoChat->publicar($usuario, $publicacion, $fecha);
+                                $publicar = $objetoChat->actualizarPublicaciones($usuario);
                                 header('Location: chat.php');
                             }
                         }

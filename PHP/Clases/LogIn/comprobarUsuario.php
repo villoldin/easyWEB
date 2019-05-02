@@ -25,8 +25,6 @@
             
             if ($existeUsuario) {
                 // Si existe usuario crearemos una cookie con el usuario                
-                
-                setcookie("usuario", $_POST['usuario'], time()+3600, "/" , "localhost"); 
                     
                 session_start();
 

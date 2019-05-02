@@ -3,7 +3,7 @@
     require "./Clases/MiPerfil/clase_perfil.php";
 
     $miPerfil = new Perfil();
-    $usuario =$_COOKIE['usuario'];
+    $usuario =$_SESSION['user'];
 
     error_reporting(0);
 ?>
@@ -72,7 +72,7 @@
                     <label for="email">E-Mail</label>
                     <input type="text" name="email" id="email" value="<?php echo $infoPerfil[0]['EMail']?>">
                     <label for="email">Publicaciones</label>
-                    <input type="text" name="publicaciones" id="publicaciones" disabled>
+                    <input type="text" name="publicaciones" id="publicaciones" value="<?php echo $infoPerfil[0]['Publicaciones']?>" disabled>
                     <input type="submit" name="btnEditar" value="Editar email">
                 </form>
 

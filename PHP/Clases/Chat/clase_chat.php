@@ -41,7 +41,16 @@
         public function publicar($user, $publicacion, $fecha) {
             $sql = "INSERT INTO PUBLICACIONES (USUARIO, PUBLICACION, FECHA) VALUES ('".$user."', '".$publicacion."', '".$fecha."')";
             if ($this->conexion_db->query($sql) === true) {
-                //echo "<p class='correcto'>Nueva publicacion</p>";
+            } else {
+                echo "<p class='error'>Error: " . $sql . "</p>" . "<p class='error'>".$conexion_db->error."</p>";
+            }
+        }
+
+        // Actualizar campo publicaciones
+
+        public function actualizarPublicaciones($user) {
+            $sql = "UPDATE USUARIOS SET PUBLICACIONES = PUBLICACIONES+1";
+            if ($this->conexion_db->query($sql) === true) {
             } else {
                 echo "<p class='error'>Error: " . $sql . "</p>" . "<p class='error'>".$conexion_db->error."</p>";
             }
