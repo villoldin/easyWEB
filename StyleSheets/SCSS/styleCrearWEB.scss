@@ -155,11 +155,52 @@ header {
 
     }
     
-    #menuLateralDisponibles {
+    #menuDisponibles {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        .apartados {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+
+            label {
+                width: 100%;
+                color: white;
+                font-size: 120%;
+                margin-bottom: 20px;
+            }
+
+            select {
+                width: 100%;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background: white;
+                color: $colorPrincipal;
+            }
+
+            .inputTexto {
+                width: 100%;
+                padding: 10px 20px;
+                border: 0;
+                border-radius: 20px;
+                background: white;
+                color: $colorPrincipal;
+            }
+
+            button {
+                @include estiloBotonesPasos;
+                width: 40%;
+            }
+
+            #menusLateral {
+                display: none;
+            }
+
+        }
+
     }
     
     #footerDisponibles {

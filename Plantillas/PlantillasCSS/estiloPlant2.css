@@ -5,7 +5,7 @@ html, body {
     height: 100vh;
 }
 
-header, #cuerpo, #menuLateral, footer {
+header, #cuerpo, #submenu, footer {
     border: solid 1px black;
     box-sizing: border-box;
     margin: 0px;
@@ -23,7 +23,7 @@ header {
     height: 15%;
 }
 
-#menuLateral {
+#submenu {
     width: 20%;
     height: 80%;
 }
@@ -31,6 +31,9 @@ header {
 #cuerpo {
     width: 80%;
     height: 80%;
+    border: 0;
+    border: 0;
+    border-right: solid 1px black;
 }
 
 footer {

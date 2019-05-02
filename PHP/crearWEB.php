@@ -127,7 +127,36 @@
                             <input type="text" class="inputTexto" name="colorFuenteH" id="colorFuenteH">
                         </div>
                     </div>
-                    <div id="menuLateralDisponibles">
+                    <div id="menuDisponibles">
+                    <button class="btnPasos" id="hechoMenu">Siguiente</button>
+                        <div class="diseño apartados">
+                            <label for="menus">Diseño de Menú</label>
+                            <select name="menus" id="menus">
+                                <option value="vacio">Vacío</option>
+                                <option value="submenu1">Menu con literales</option>
+                                <option value="submenu2">Menu con imagenes</option>
+                            </select>
+                            <select name="menusLateral" id="menusLateral">
+                                <option value="vacio">Vacío</option>
+                                <option value="submenu1L">Menu con literales</option>
+                                <option value="submenu2L">Menu con imagenes</option>
+                            </select>
+                        </div>
+                        <div class="colores apartados">
+                            <label for="coloresMenu">Color del Menú</label>
+                            <input type="text" class="inputTexto" name="coloresMenu" id="coloresMenu">
+                        </div>
+                        <div class="borde apartados">
+                            <label>Bordes</label>
+                            <div id="opcionesBorde">
+                                <button id="bordeSiSM">Si</button>
+                                <button id="bordeNoSM">No</button>
+                            </div>
+                        </div>
+                        <div class="colorFuente apartados">
+                            <label for="colorFuenteSM">Color de la fuente</label>
+                            <input type="text" class="inputTexto" name="colorFuenteSM" id="colorFuenteSM">
+                        </div>
                     </div>
                     <div id="footerDisponibles">
                     </div>
