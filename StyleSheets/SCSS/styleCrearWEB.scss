@@ -5,6 +5,10 @@ html {
     overflow-x: hidden;
 }
 
+.row {
+    margin: 0;
+}
+
 header {
     width: 100vw;
 }
@@ -68,6 +72,7 @@ header {
     color: white;
     margin-top: -50px;
     display: none;
+    margin-right: -15px;
 
     .btnPasos {
         @include estiloBotonesPasos;
@@ -92,13 +97,17 @@ header {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            width: 100%;
+            width: 80%;
+            height: auto;
             padding: 10px;
             padding-top: 15px;
+            padding-bottom: 15px;
             border-radius: 20px; 
             background: white;
             margin-bottom: 20px;
-            box-shadow: $sombraCaja;             
+            box-shadow: $sombraCaja;       
+            margin: auto; 
+            margin-bottom: 10px;     
 
             p {
                 width: 100%;

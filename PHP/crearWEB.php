@@ -28,13 +28,14 @@
 </head>
 
 <body>
-    <div class="row col-md-12 header">
+    <div class="row col-md-12 header">                  
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span> </button>
+              <a class="navbar-brand" href="../index.php">EasyWEB</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="../index.php">EasyWEB</a>
+                
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
@@ -47,16 +48,11 @@
                     </li>
                 </ul>
                 <ul id="logIn">                    
-                    <li class="log"><a class="nav-link" href="miPerfil.php"><i class="fas fa-user"></i> Mi perfil</a></li>
+                    <li class="log"><a class="nav-link" href="#"><i class="fas fa-user"></i> Mi perfil</a></li>
                     <li class="log"><a class="nav-link" href="Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
-                    <li id="mostrarMenu"><button class="desplegarMenu"><i class="fas fa-bars"></i></button></li>
-                    <li id="quitarMenu"><button class="desplegarMenu"><i class="fas fa-bars"></i></button></li>
                 </ul>
             </div>
-        </nav>
-                    
-
-                    
+        </nav>                    
     </div>
 
     <div class="cuerpoCreacionWEB">
@@ -74,22 +70,22 @@
                         <button class="btnPasos" id="hechoPlant">Siguiente</button>
                         <div class="tarjetaPlantilla" id="Plantilla1">
                             <p>Arrastra</p>
-                            <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" width="70%" height="70%"
+                            <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" width="70%" height="80vw"
                                 scroll="no"></iframe>
                         </div>
                         <div class="tarjetaPlantilla" id="Plantilla2">
                             <p>Arrastra</p>
-                            <iframe src="../Plantillas/PlantillasHTML/Plantilla2.html" frameborder="0" width="70%" height="auto"
+                            <iframe src="../Plantillas/PlantillasHTML/Plantilla2.html" frameborder="0" width="70%" height="80vw"
                                 scroll="no"></iframe>
                         </div>
                         <div class="tarjetaPlantilla" id="Plantilla3">
                             <p>Arrastra</p>
-                            <iframe src="../Plantillas/PlantillasHTML/Plantilla3.html" frameborder="0" width="70%" height="auto"
+                            <iframe src="../Plantillas/PlantillasHTML/Plantilla3.html" frameborder="0" width="70%" height="80vw"
                                 scroll="no"></iframe>
                         </div>
                         <div class="tarjetaPlantilla" id="Plantilla4">
                             <p>Arrastra</p>
-                            <iframe src="../Plantillas/PlantillasHTML/Plantilla4.html" frameborder="0" width="70%" height="auto"
+                            <iframe src="../Plantillas/PlantillasHTML/Plantilla4.html" frameborder="0" width="70%" height="80vw"
                                 scroll="no"></iframe>
                         </div>
                     </div>
@@ -167,7 +163,7 @@
     </div>
 
     <script src="../JavaScript/crearWEB.js"></script>
-
+    <script src="../JavaScript/menuDesplegable.js"></script>
 </body>
 
 </html>

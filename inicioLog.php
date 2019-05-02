@@ -33,8 +33,8 @@
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="index.php">EasyWEB</a>
+            <a class="navbar-brand" href="index.php">EasyWEB</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">                
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
@@ -49,7 +49,6 @@
                     <li><a class="nav-link" href="PHP/miPerfil.php"><i class="fas fa-user"></i> Mi perfil</a></li>
                     <li><a class="nav-link" href="PHP/Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
                 </ul>
-
             </div>
         </nav>
     </div>
@@ -87,6 +86,7 @@
 
     </div>
 
+    <script src="JavaScript/menuDesplegable.js"></script>
 </body>
 
 </html>
