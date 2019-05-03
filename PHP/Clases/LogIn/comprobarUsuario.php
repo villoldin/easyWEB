@@ -23,7 +23,8 @@
             $existeUsuario = $objetoLogin->existeUsuario($_POST['usuario'], $_POST['pass']);
     
             
-            if ($existeUsuario) {
+            if ($existeUsuario === true) {
+
                 // Si existe usuario crearemos una cookie con el usuario                
                     
                 session_start();

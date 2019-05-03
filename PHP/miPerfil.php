@@ -73,34 +73,31 @@
                     <label for="apellido2">Segundo apellido</label>
                     <input type="text" name="apellido2" id="apellido2" value="<?php echo $infoPerfil[0]['Apellido2']?>" disabled>
                     <label for="email">E-Mail</label>
-                    <input type="text" name="email" id="email" value="<?php echo $infoPerfil[0]['EMail']?>">
-                    <label for="email">Publicaciones</label>
+                    <input type="email" name="email" id="email" value="<?php echo $infoPerfil[0]['EMail']?>">
+                    <label for="publicaciones">Publicaciones</label>
                     <input type="text" name="publicaciones" id="publicaciones" value="<?php echo $infoPerfil[0]['Publicaciones']?>" disabled>
                     <input type="submit" name="btnEditar" value="Editar email">
-                </form>
 
-                <?php
+                    <?php
 
-                    $existeMail = $miPerfil->existeMail($_POST['email']);
-                    $mailValido = $miPerfil->mailValido($_POST['email']);
+                        $existeMail = $miPerfil->existeMail($_POST['email']);
 
-
-                    if (isset($_POST['btnEditar'])) {
-                        if(empty($_POST['email'])) {
-                            echo "<p class='error'>No puede haber ningun campo vacio</p>";
-                        } else {    
-                            if ($existeMail[0]['cont'] != 0) {
-                                echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
-                            } else if ($mailValido != 1) {
-                                echo '<div class="error"><p>El formato del eMail no es correcto</p></div>';
-                            } else {
-                                $edicionMail = $miPerfil->editarMail($_POST['email']);
+                        if (isset($_POST['btnEditar'])) {
+                            echo "DENTRO";
+                            if(empty($_POST['email'])) {
+                                echo "<p class='error'>No puede haber ningun campo vacio</p>";
+                            } else {    
+                                if ($existeMail === true) {
+                                    echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
+                                } else {
+                                    $edicionMail = $miPerfil->editarMail($_POST['email']);
+                                }
                             }
                         }
-                    }
+                        
+                    ?>
 
-                ?>           
-
+                </form>
             </div>
         </div>
     </div>    

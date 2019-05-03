@@ -1,6 +1,6 @@
 <?php
 
-    require_once ("C:\\xampp\\htdocs\\easyWEB\\Conexion\\conexion.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/easyWEB/Conexion/conexion.php");
 
     class Chat extends Conexion {
 

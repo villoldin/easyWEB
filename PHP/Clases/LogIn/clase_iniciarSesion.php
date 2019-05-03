@@ -1,6 +1,6 @@
 <?php
 
-    require "../../../Conexion/conexion.php";
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/easyWEB/Conexion/conexion.php");
 
     class Login extends Conexion {
 

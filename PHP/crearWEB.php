@@ -25,6 +25,12 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="../Frameworks/JQuery.js"></script>
     <script src="../Frameworks/JQueryUI/jquery-ui.min.js"></script>
+    <script>
+        if (screen.width < 800) {
+            console.log(screen.width);
+            location.href ="../inicioLog.php";
+        }
+    </script>
 </head>
 
 <body>

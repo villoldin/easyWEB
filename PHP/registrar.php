@@ -64,7 +64,7 @@
                     <label for="apellido2">Segundo apellido</label>
                     <input type="text" name="apellido2" id="apellido2">
                     <label for="email">E-Mail (*)</label>
-                    <input type="text" name="email" id="email">
+                    <input type="email" name="email" id="email">
                     <label for="pass">Contraseña (*)</label>
                     <input type="password" name="pass" id="pass">
                     <label for="pass">Confirmar contraseña (*)</label>
@@ -85,7 +85,6 @@
 
                         $existeUsuario = $objetoRegistro->existeUsuario($usuario);
                         $existeMail = $objetoRegistro->existeMail($email);
-                        //$mailValido = $objetoRegistro->mailValido($email);
 
                         if ($usuario == '' || $nombre == '' || $ape1 == '' || $email == '' || $pass == '' || $confPass == '') {
                             echo '<div class="error"><p>No puede haber campos vacíos</p></div>';
@@ -94,9 +93,7 @@
                                 echo '<div class="error"><p>Usuario ya registrado en easyWEB</p></div>';
                             } else if ($existeMail === true) {
                                 echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
-                            } /*else if ($mailValido != 1) {
-                                echo '<div class="error"><p>El formato del eMail no es correcto</p></div>';
-                            } */else if ($pass != $confPass) {
+                            } else if ($pass != $confPass) {
                                 echo '<div class="error"><p>Contraseñas diferentes</p></div>';
                             } else {
                                 $registroUsuario = $objetoRegistro->registrarUsuario($usuario, $nombre, $ape1, $ape2, $email, $pass);
