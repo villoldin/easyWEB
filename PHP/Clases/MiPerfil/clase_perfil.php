@@ -33,9 +33,9 @@
         
         // Editar eMail
 
-        public function editarMail($mail) {
-            $sql = "UPDATE USUARIOS SET EMAIL = ";
-            if ($this->conexion_db->query($sql) === TRUE) {
+        public function editarMail($mail, $user) {
+            $sql = "UPDATE USUARIOS SET EMAIL = \"$mail\" WHERE USUARIO = \"$user\";";
+            if ($this->conexion_db->query($sql) === true) {
                 echo "<p class='correcto'>EMail del usuario modificado</p>";
             } else {
                 echo "<p class='error'>Error: " . $sql . "</p>" . "<p class='error'>".$conexion_db->error."</p>";

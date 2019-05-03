@@ -6,6 +6,7 @@
     $usuario =$_SESSION['user'];
 
     error_reporting(0);
+
 ?>
 
 <!DOCTYPE html>
@@ -83,14 +84,14 @@
                         $existeMail = $miPerfil->existeMail($_POST['email']);
 
                         if (isset($_POST['btnEditar'])) {
-                            echo "DENTRO";
-                            if(empty($_POST['email'])) {
+                            $mailNuevo = $_POST['email'];
+                            if($mailNuevo == "") {
                                 echo "<p class='error'>No puede haber ningun campo vacio</p>";
                             } else {    
                                 if ($existeMail === true) {
                                     echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
                                 } else {
-                                    $edicionMail = $miPerfil->editarMail($_POST['email']);
+                                    $edicionMail = $miPerfil->editarMail($mailNuevo, $usuario);
                                 }
                             }
                         }

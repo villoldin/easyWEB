@@ -15,10 +15,12 @@ form {
 
 .error {
     @include mensajeError;
+    width: 100%;
 }
 
 .correcto {
     @include mensajeCorrecto;
+    width: 100%;
 }
 
 @-webkit-keyframes tiembla{
