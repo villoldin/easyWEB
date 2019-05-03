@@ -39,7 +39,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item d-md-none d-lg-block">
+                    <li class="nav-item d-none d-sm-none d-md-none d-lg-block">
                         <a class="nav-link" href="PHP/crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a></li>
                     <li class="nav-item">
                             <a class="nav-link" href="PHP/chat.php"><i class="far fa-comments"></i> Chat</a>

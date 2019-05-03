@@ -10,7 +10,7 @@
         $usuario=$_SESSION['user'];
     }
 
-    //error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
     
 ?>
 
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item d-md-none d-lg-block">
+                    <li class="nav-item d-none d-sm-none d-md-none d-lg-block">
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
@@ -69,21 +69,6 @@
         <div class="row">
             <div class="col-md-12">
                 <h1><i class="far fa-comments"></i> Chat EasyWEB</h1>
-
-                <!-- -
-                <div id="filtros">
-                    <label for="formularioOrden">Ordenar publicaciones por</label>
-                    <form action="chat.php" method="post" name="formularioOrden">
-                        <select name="orden" id="orden">
-                            <option value="nuevos">Más recientes</option>
-                            <option value="antiguos">Más antiguos</option>
-                            <option value="masVotados">Más votos positivos</option>
-                        </select>
-                        <input type="submit" name="ordenar" value="Ordenar">
-                    </form>                    
-                </div>   
-                -->  
-
                 <div class='col-md-12' id='formPublicacion'>
                     <form action="chat.php" method="post">
                         <input type="text" name="publicacion" id="publicacion" placeholder="Escribe tu publicación ...">
@@ -104,6 +89,7 @@
                                 $publicar = $objetoChat->actualizarPublicaciones($usuario);
                                 header('Location: chat.php');
                             }
+                            
                         }
                     ?>
 

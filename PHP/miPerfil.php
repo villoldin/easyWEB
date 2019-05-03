@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../Frameworks/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleRegistar.css">
+    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleMiPerfil.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="../Frameworks/JQuery.js"></script>
     
@@ -38,7 +38,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item d-md-none d-lg-block">
+                    <li class="nav-item d-none d-sm-none d-md-none d-lg-block">
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">

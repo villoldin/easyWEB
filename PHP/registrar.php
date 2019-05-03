@@ -34,7 +34,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item d-md-none d-lg-block">
+                    <li class="nav-item d-none d-sm-none d-md-none d-lg-block">
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
@@ -72,9 +72,7 @@
                     <input type="button" value="Borrar campos" id="btnReset">
                     <input type="submit" value="Registrarse" name="btnRegistro">
                     <p>Los campos marcados con * son obligatorios de completar.</p>
-                </form>  
-                
-                <?php
+                    <?php
 
                     if (isset($_POST['btnRegistro'])) { 
                         $usuario = $_POST['usuario'];
@@ -107,6 +105,9 @@
                     }
 
                 ?>
+                </form>  
+                
+                
             </div>
         </div>
     </div>

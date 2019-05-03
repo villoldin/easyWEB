@@ -13,7 +13,7 @@ h1 {
     }
 
     #avisoRegistro {
-        width: 40vw;
+        width: 60vw;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -58,4 +58,21 @@ h1 {
     0%  { -webkit-transform:rotateZ(-5deg); }
     50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
     100%{ -webkit-transform:rotateZ( 5deg); }
+}
+
+@media (max-width: 1000px) {
+    #avisoRegistro {
+        flex-wrap: wrap;
+
+        p {
+            width: 100% !important;
+            margin-bottom: 10px !important;
+            text-align: center;
+        }
+
+        a {
+            width: 75% !important;
+            margin-bottom: 20px;
+        }
+    }
 }

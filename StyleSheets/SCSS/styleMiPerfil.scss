@@ -7,21 +7,10 @@ h1 {
 .cuerpo > .row > .col-md-12 {
     @include centrarFlex;
     @include formulario;
+}
 
-    form  p {
-        margin-top: 40px;
-        margin-bottom: 0;
-        font-weight: bolder;
-
-    }
-
-    .error > p {
-        margin: 0px;
-    }
-
-    .correcto > p {
-        margin: 0px;
-    }
+form {
+    @include formulario;
 }
 
 .error {
