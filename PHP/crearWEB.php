@@ -40,7 +40,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-md-none d-lg-block">
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
@@ -48,8 +48,10 @@
                     </li>
                 </ul>
                 <ul id="logIn">                    
-                    <li class="log"><a class="nav-link" href="#"><i class="fas fa-user"></i> Mi perfil</a></li>
+                    <li class="log"><a class="nav-link" href="miPerfil.php"><i class="fas fa-user"></i> Mi perfil</a></li>
                     <li class="log"><a class="nav-link" href="Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
+                    <li id="mostrarM"><button id="mostrarMenu"><i class="fas fa-bars"></i></button></li>
+                    <li id="quitarM"><button id="quitarMenu"><i class="fas fa-bars"></i></button></li>
                 </ul>
             </div>
         </nav>                    

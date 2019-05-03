@@ -29,8 +29,8 @@ $(btnMostrar).click(function (e) {
     $(menuCreacion).removeClass('col-md-12');
     $(menuLateral).addClass('col-md-2');
     $(menuCreacion).addClass('col-md-10');
-    $(btnMostrar).css('display', 'none');
-    $(btnQuitar).css('display', 'block');
+    $("#mostrarM").css('display', 'none');
+    $("#quitarM").css('display', 'block');
     $(menuLateralContenido).css('display', 'block');
 });
 
@@ -39,9 +39,9 @@ $(btnQuitar).click(function (e) {
     $(menuCreacion).removeClass('col-md-10');
     $(menuLateral).addClass('col-md-0');
     $(menuCreacion).addClass('col-md-12');
-    $(btnQuitar).css('display', 'none');
+    $("#quitarM").css('display', 'none');
     $(menuLateralContenido).css('display', 'none');
-    $(btnMostrar).css('display', 'block');
+    $("#mostrarM").css('display', 'block');
 });
 
 

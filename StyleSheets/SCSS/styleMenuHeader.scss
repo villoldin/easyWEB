@@ -17,7 +17,6 @@ body {
     margin-bottom: 30px;
     padding-left: 40px;
     padding-right: 40px;
-    height: 60px;
 
     .navbar-toggler {
         border: 0;        
@@ -52,7 +51,19 @@ body {
         flex-direction: row;
         list-style: none;
         height: 100%;
-        align-items: center;        
+        align-items: center;   
+        
+        #quitarM {
+            display: none;
+        }
+        
+        button {
+            background: $colorPrincipal;
+            color: white;
+            border: 0;
+            font-size: 120%;
+        }
+
     }
 
     #foroLog {
@@ -89,19 +100,7 @@ body {
         
 }
 
-/*@media (min-width: 700px) {
-
-    .navbar-expand-lg .navbar-collapse {
-
-        display: -ms-flexbox !important;
-        display: flex !important;
-        -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-    }
-
-}*/
-
-@media (min-width: 700px) {
+@media (min-width: 800px) {
 
     .navbar {
         height: fit-content;
@@ -114,24 +113,17 @@ body {
     #logIn {
         margin: 0;
         display: flex;
-        flex-direction: column;
         list-style: none;
         height: 100%;
         align-items: center;        
     }
 
-}
-
-@media (max-width: 1075px) {
-    .navbar {
-
-        a {
-            font-size: 100%
+    .navbar-nav {
+        flex-direction: row;       
+        
+        li {
+            margin-right: 10px;
         }
-
-        .navbar-brand {
-            font-size: 200%;
-        }
-
     }
+
 }

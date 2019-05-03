@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleRegistar.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="../Frameworks/JQuery.js"></script>
+    
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-md-none d-lg-block">
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
@@ -50,6 +51,7 @@
                 </ul>
             </div>
         </nav>
+        <script src="../JavaScript/menuDesplegable.js"></script>
     </div>
 
     <div class="container cuerpo">
@@ -101,9 +103,7 @@
 
             </div>
         </div>
-    </div>
-
-    <script src="../JavaScript/menuDesplegable.js"></script>
+    </div>    
 </body>
 
 </html>

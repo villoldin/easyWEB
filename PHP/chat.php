@@ -44,7 +44,7 @@
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-md-none d-lg-block">
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
