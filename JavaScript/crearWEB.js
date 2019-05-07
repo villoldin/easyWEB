@@ -156,12 +156,12 @@ $("#sombraNo").click(function (e) {
 
 $("#bordeSi").click(function (e) { 
     var cabeceraIframe = $(iframe).contents().find('header');
-    $(cabeceraIframe).css("border", "solid 1px black");
+    $(cabeceraIframe).css("border-bottom", "solid 1px black");
 });
 
 $("#bordeNo").click(function (e) { 
     var cabeceraIframe = $(iframe).contents().find('header');
-    $(cabeceraIframe).css("border", "0");
+    $(cabeceraIframe).css("border-bottom", "0");
 });
 
             // Cambiamos el color de la fuente
@@ -235,12 +235,14 @@ $("#coloresMenu").change(function (e) {
         
 $("#bordeSiSM").click(function (e) { 
     var submenuIframe = $(iframe).contents().find('#submenu');
-    $(submenuIframe).css("border", "solid 1px black");
+    $(submenuIframe).css("border-left", "solid 1px black");
+    $(submenuIframe).css("border-right", "solid 1px black");
 });
         
 $("#bordeNoSM").click(function (e) { 
     var submenuIframe = $(iframe).contents().find('#submenu');
-    $(submenuIframe).css("border", "0");
+    $(submenuIframe).css("border-left", "0");
+    $(submenuIframe).css("border-right", "0");
 });
         
             // Cambiamos el color de la fuente
@@ -254,4 +256,15 @@ $("#colorFuenteSM").change(function (e) {
 
 // ------------------- PERSONALIZACIÓN FOOTER ------------------- //
 
+// ------------------- GENERAR CODIGO ------------------- //
 
+var btnGenerar = document.getElementById("btnGenerar");
+var enlaceDescargar = document.getElementById("descargar");
+
+$(btnGenerar).click(function (e) { 
+    var codigoHead = lienzo.contentWindow.document.head.innerHTML;
+    var codigoBody = lienzo.contentWindow.document.body.innerHTML;
+    var codigoIframe = "<!DOCTYPE html><html lang='en'><head>" + codigoHead + "</head><body style='margin: 0; box-sizing: border-box; width: 100vw; height: 100vh; display: flex; flex-direction: row; flex-wrap: wrap; border: solid 1px black;'>" + codigoBody + "</body></html>";
+    enlaceDescargar.download = "miPagina.html";
+    enlaceDescargar.href = "data:application/octet-stream," + encodeURIComponent(codigoIframe);
+});
