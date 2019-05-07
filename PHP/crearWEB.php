@@ -69,7 +69,7 @@
                 <iframe src="" frameborder="0" id="lienzo">
 
                 </iframe>
-                <label id="generarCodigo">Pulsa aqui para generar el código que has creado </label><button id="generarPDF">Generar código</button>
+                <label id="generarCodigo">Pulsa aqui para generar el código que has creado </label> <a id="descargar"><button id="btnGenerar">Generar código</button></a>
             </div>
             <div class="col-md-0" id="menuLateral">
                 <div id="menuLateralContenido">
