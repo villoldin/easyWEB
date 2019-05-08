@@ -59,7 +59,10 @@
         <div class='row col-md-12'>
             <h1><i class="fas fa-laptop-code"></i> ¿Qué es EasyWEB?</h1>
             <p>EasyWEB servicio con el que podrás editar plantillas para crear tu propio código HTML para implementarlo en tus proyectos.</p>
+            <p>Podrás editar las plantillas disponibles cambiando los elementos, color, sombras, bordes, color de letra, etc...</p>
+            <p>Una vez que creas que has conseguido el diseño deseado, podrás exportar el código HTML para usarlo en tu proyecto y así ahorrarte el trabajo.</p>
             <h1><i class="fas fa-chalkboard"></i> Plantillas</h1>
+            <p>Estas son las plantillas que podrás editar en nuestra plataforma.</p>
             <div id="prevPlantillas">
                 <div id="Plantilla1">
                     <p>Plantilla 1</p>

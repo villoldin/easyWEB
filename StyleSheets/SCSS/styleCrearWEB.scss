@@ -53,7 +53,7 @@ header {
         border-radius: 20px;
     }
 
-    #generarPDF:hover {
+    #btnGenerar:hover {
         background: white;
         color: $colorPrincipal;   
         box-shadow: $sombraCaja;
@@ -64,7 +64,8 @@ header {
 #menuLateralContenido {
     background: $colorPrincipal;
     border-radius: 0px 0px 0px 20px;
-    padding: 30px;
+    padding: 15px;
+    padding-top: 30px;
     color: white;
     margin-top: -50px;
     display: none;
@@ -72,6 +73,7 @@ header {
 
     .btnPasos {
         @include estiloBotonesPasos;
+        margin-top: 20px;
     }
 
     .btnPasos:hover {
@@ -80,6 +82,7 @@ header {
 
     #hechoPlant {
         display: none;
+        margin-top: 40px;
     }
 
     #plantillasDisponibles {
@@ -94,16 +97,17 @@ header {
             flex-wrap: wrap;
             justify-content: center;
             width: 80%;
+            min-width: 120px;
+            max-width: 400px;
             height: auto;
             padding: 10px;
             padding-top: 15px;
             padding-bottom: 15px;
             border-radius: 20px; 
             background: white;
-            margin-bottom: 20px;
             box-shadow: $sombraCaja;       
             margin: auto; 
-            margin-bottom: 10px;     
+            margin-bottom: 20px;     
 
             p {
                 width: 100%;
@@ -112,6 +116,11 @@ header {
                 color: $colorPrincipal;
             }
 
+        }
+
+        .tarjetaPlantilla:hover {
+            transform: scale(1.1);
+            z-index: 99;
         }
 
     }
@@ -125,7 +134,7 @@ header {
         .apartados {
             width: 100%;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
 
             label {
                 width: 100%;
@@ -186,6 +195,53 @@ header {
                 color: $colorPrincipal;
             }
 
+            #menuLateral {
+                display: none;
+            }
+
+            .inputTexto {
+                width: 100%;
+                padding: 10px 20px;
+                border: 0;
+                border-radius: 20px;
+                background: white;
+                color: $colorPrincipal;
+            }
+
+            button {
+                @include estiloBotonesPasos;
+                width: 40%;
+            }
+        }
+
+    }
+    
+    #footerDisponibles {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .apartados {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+
+            label {
+                width: 100%;
+                color: white;
+                font-size: 120%;
+                margin-bottom: 20px;
+            }
+
+            select {
+                width: 100%;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background: white;
+                color: $colorPrincipal;
+            }
+
             .inputTexto {
                 width: 100%;
                 padding: 10px 20px;
@@ -205,14 +261,6 @@ header {
             }
 
         }
-
-    }
-    
-    #footerDisponibles {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }  
 
 }

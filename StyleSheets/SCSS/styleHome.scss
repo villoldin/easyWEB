@@ -13,9 +13,18 @@ h1 {
 }
 
 .cuerpo {
+    padding-bottom: 40px;
+
+    h1:nth-child(1) {
+        margin-top: 10px;
+    }
+
+    h1 {
+        margin-top: 40px;
+    }
 
     .row>p {
-        margin-bottom: 70px;
+        font-size: 120%;
     }
     
 }
@@ -51,7 +60,6 @@ h1 {
         padding-bottom: 5px;
         font-weight: bold;
         text-align: center;
-        border-bottom: solid 2px $colorPrincipal;
     }
 
     div > iframe {
