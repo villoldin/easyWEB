@@ -151,7 +151,7 @@ $("#headers").change(function (e) {
 
 $("#coloresHeader").change(function (e) { 
     var cabeceraIframe = $(iframe).contents().find('header');
-    var color = $(document.getElementById("coloresHeader")).val();
+    var color = $(document.getElementById("coloresHeader")).val().toLowerCase();
     $(cabeceraIframe).css("background", color);
 });
 
@@ -183,7 +183,7 @@ $("#bordeNo").click(function (e) {
 
 $("#colorFuenteH").change(function (e) { 
     var enlaces = $(iframe).contents().find('header').find('a');
-    var color = $(document.getElementById("colorFuenteH")).val();
+    var color = $(document.getElementById("colorFuenteH")).val().toLowerCase();
     $(enlaces).css("color", color);
 });
 
@@ -225,7 +225,7 @@ $("#atrasMenu").click(function (e) {
             // Cambiamos el submenú según la opción escogida
 
 $("#menus").change(function (e) { 
-    var submenuElegido = $(document.getElementById("menus")).val();
+    var submenuElegido = $(document.getElementById("menus")).val().toLowerCase();
     var submenuIframe = $(iframe).contents().find('#submenu');
     if (submenuElegido == "submenu1") {
         $(submenuIframe).empty();
@@ -239,7 +239,7 @@ $("#menus").change(function (e) {
 });
 
 $("#menusLateral").change(function (e) { 
-    var submenuLateralElegido = $(document.getElementById("menusLateral")).val();
+    var submenuLateralElegido = $(document.getElementById("menusLateral")).val().toLowerCase();
     var submenuIframe = $(iframe).contents().find('#submenu');
     if (submenuLateralElegido == "submenu1L") {
         $(submenuIframe).empty();
@@ -255,7 +255,7 @@ $("#menusLateral").change(function (e) {
 
 $("#coloresMenu").change(function (e) { 
     var submenuIframe = $(iframe).contents().find('#submenu');
-    var color = $(document.getElementById("coloresMenu")).val();
+    var color = $(document.getElementById("coloresMenu")).val().toLowerCase();
     $(submenuIframe).css("background", color);
 });
         
@@ -279,7 +279,7 @@ $("#bordeNoSM").click(function (e) {
         
 $("#colorFuenteSM").change(function (e) { 
     var enlaces = $(iframe).contents().find('#submenu').find('a');
-    var color = $(document.getElementById("colorFuenteSM")).val();
+    var color = $(document.getElementById("colorFuenteSM")).val().toLowerCase();
     $(enlaces).css("color", color);
 });
 
@@ -322,7 +322,7 @@ $("#atrasFooter").click(function (e) {
 
 $("#footers").change(function (e) { 
     var footerIframe = $(iframe).contents().find('footer');
-    var footerElegido = $(document.getElementById("footers")).val();
+    var footerElegido = $(document.getElementById("footers")).val().toLowerCase();
     if (footerElegido == "footer1") {
         $(footerIframe).empty();
         $(footerIframe).append(footer1);
@@ -348,7 +348,7 @@ $("#footers").change(function (e) {
 
 $("#coloresFooter").change(function (e) { 
     var footerIframe = $(iframe).contents().find('footer');
-    var color = $(document.getElementById("coloresFooter")).val();
+    var color = $(document.getElementById("coloresFooter")).val().toLowerCase();
     $(footerIframe).css("background", color);
 });
 
@@ -384,7 +384,7 @@ $("#bordeNoF").click(function (e) {
 $("#colorFuenteF").change(function (e) { 
     var enlaces = $(iframe).contents().find('footer').find('a');
     var parrafos = $(iframe).contents().find('footer').find('p');
-    var color = $(document.getElementById("colorFuenteF")).val();
+    var color = $(document.getElementById("colorFuenteF")).val().toLowerCase();
     $(enlaces).css("color", color);
     $(parrafos).css("color", color);
 });
