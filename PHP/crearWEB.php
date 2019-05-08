@@ -46,7 +46,7 @@
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item d-none d-sm-none d-md-none d-lg-block">
-                        <a class="nav-link" href="crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
+                        <a class="nav-link" href="crearWEB.php"><i class="fas fa-laptop-code"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="chat.php"><i class="far fa-comments"></i> Chat</a>
@@ -73,8 +73,7 @@
             </div>
             <div class="col-md-0" id="menuLateral">
                 <div id="menuLateralContenido">
-                    <div id="plantillasDisponibles">
-                        <button class="btnPasos" id="hechoPlant">Siguiente</button>
+                    <div id="plantillasDisponibles">                        
                         <div class="tarjetaPlantilla" id="Plantilla1">
                             <p>Arrastra</p>
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla1.html" frameborder="0" width="70%" height="80vw"
@@ -95,9 +94,10 @@
                             <iframe src="../Plantillas/PlantillasHTML/Plantilla4.html" frameborder="0" width="70%" height="80vw"
                                 scroll="no"></iframe>
                         </div>
+                        <button class="btnPasos" id="hechoPlant">Siguiente</button>
                     </div>
                     <div id="headerDisponibles">
-                        <button class="btnPasos" id="hechoHeader">Siguiente</button>
+                        <button class="btnPasos" id="atrasHeader">Atrás</button> 
                         <div class="diseño apartados">
                             <label for="headers">Diseño de Header</label>
                             <select name="headers" id="headers">
@@ -129,9 +129,10 @@
                             <label for="colorFuenteH">Color de la fuente</label>
                             <input type="text" class="inputTexto" name="colorFuenteH" id="colorFuenteH">
                         </div>
+                        <button class="btnPasos" id="hechoHeader">Siguiente</button>
                     </div>
-                    <div id="menuDisponibles">
-                    <button class="btnPasos" id="hechoMenu">Siguiente</button>
+                    <div id="menuDisponibles">    
+                        <button class="btnPasos" id="atrasMenu">Atrás</button>                     
                         <div class="diseño apartados">
                             <label for="menus">Diseño de Menú</label>
                             <select name="menus" id="menus">
@@ -160,8 +161,43 @@
                             <label for="colorFuenteSM">Color de la fuente</label>
                             <input type="text" class="inputTexto" name="colorFuenteSM" id="colorFuenteSM">
                         </div>
+                        <button class="btnPasos" id="hechoMenu">Siguiente</button>
                     </div>
-                    <div id="footerDisponibles">
+                    <div id="footerDisponibles">    
+                        <button class="btnPasos" id="atrasFooter">Atrás</button>                    
+                        <div class="diseño apartados">
+                            <label for="footer">Diseño de Footer</label>
+                            <select name="footer" id="footers">
+                                <option value="vacio">Vacío</option>
+                                <option value="footer1">Copyright + RRSS</option>
+                                <option value="footer2">RRSS + Copyright</option>                                
+                                <option value="footer3">Copyright + Cookies</option>
+                                <option value="footer4">Cookies + Copyright</option>
+                                <option value="footer5">Copyright</option>
+                            </select>
+                        </div>
+                        <div class="colores apartados">
+                            <label for="coloresFooter">Color del Footer</label>
+                            <input type="text" class="inputTexto" name="coloresFooter" id="coloresFooter">
+                        </div>
+                        <div class="sombra apartados">
+                            <label>Sombra</label>
+                            <div id="opcionesSombra">
+                                <button id="sombraSiF">Si</button>
+                                <button id="sombraNoF">No</button>
+                            </div>
+                        </div>
+                        <div class="borde apartados">
+                            <label>Borde Footer</label>
+                            <div id="opcionesBorde">
+                                <button id="bordeSiF">Si</button>
+                                <button id="bordeNoF">No</button>
+                            </div>
+                        </div>
+                        <div class="colorFuente apartados">
+                            <label for="colorFuenteF">Color de la fuente</label>
+                            <input type="text" class="inputTexto" name="colorFuenteF" id="colorFuenteF">
+                        </div>
                     </div>
                 </div>                
             </div>

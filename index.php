@@ -40,7 +40,7 @@
                         <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item d-none d-sm-none d-md-none d-lg-block">
-                        <a class="nav-link" href="PHP/crearWEB.php"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</a>
+                        <a class="nav-link" href="PHP/crearWEB.php"><i class="fas fa-laptop-code"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-link" href="PHP/chat.php"><i class="far fa-comments"></i> Chat</a>
@@ -59,7 +59,18 @@
         <div class='row col-md-12'>
             <h1><i class="fas fa-laptop-code"></i> ¿Qué es EasyWEB?</h1>
             <p>EasyWEB servicio con el que podrás editar plantillas para crear tu propio código HTML para implementarlo en tus proyectos.</p>
+            <p>Podrás editar las plantillas disponibles cambiando los elementos, color, sombras, bordes, color de letra, etc...</p>
+            <p>Una vez que creas que has conseguido el diseño deseado, podrás exportar el código HTML para usarlo en tu proyecto y así ahorrarte el trabajo.</p>
+            <p>Indicaciones:</p>
+            <ul>
+                <li>Color de fondo y color de letra: para indicar el color lo puedes hacer con el nombre del color en inglés, en código hexadecimal o RGB.</li>
+                <li>Tamaño de letra: para indicar el tamaño de letra lo puedes hacer tanto en px, en % o en cualquier formato que acepte CSS.</li>
+                <li>Borde: esta opción pone y quita un borde negro de 1px de grosor.</li>
+                <li>Sombra: esta opción pone y quita una sombra para añadir volumen a los elementos.</li>
+            </ul>
+            <p id="avisoHome">¡Este servicio solo está disponible en la versión de escritorio!</p>
             <h1><i class="fas fa-chalkboard"></i> Plantillas</h1>
+            <p>Estas son las plantillas que podrás editar en nuestra plataforma.</p>
             <div id="prevPlantillas">
                 <div id="Plantilla1">
                     <p>Plantilla 1</p>
@@ -82,6 +93,16 @@
                         scroll="no"></iframe>
                 </div>
             </div>
+            <h1><i class="far fa-comments"></i> Chat</h1>
+            <p>Aquí podrás consultar dudas sobre desarrollo WEB y compartir tus consejos para ayudar a la comunidad y hacerles más fácil la dura vida del desarrollador.</p>
+            <p>Solo podrás publicar en nuestro chat si has iniciado sesión en EasyWEB, si no solo podrás leer lo que los miembros de la communidad han compartido.</p>
+            <p>Normas del chat:</p>
+            <ul>
+                <li>Utiliza lenguaje educado.</li>
+                <li>Mantened siempre el respeto hacia los demás, estamo aquí para ayudarnos.</li>
+                <li>Solo temas de desarrollo.</li>
+            </ul>
+            <p id="avisoHome">¡El incumplimiento de estas normas podría acarrear sanción para el usuario!</p>
             <h1><i class="far fa-smile"></i> ¿Cómo puedo usar EasyWEB?</h1>
             <p>Para disfrutar de estos servicios solo tienes que crearte una cuenta gratuita en nuestra plataforma y... ¡ESO ES TODO!</p>
         </div>
