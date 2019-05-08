@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-05-2019 a las 20:46:35
+-- Tiempo de generación: 03-05-2019 a las 19:42:26
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -28,25 +28,12 @@ USE `easyweb`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `body`
---
-
-CREATE TABLE `body` (
-  `IDBody` int(11) NOT NULL,
-  `RutaHTML` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `RutaCSS` varchar(30) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `footer`
 --
 
 CREATE TABLE `footer` (
-  `IDFooter` int(11) NOT NULL,
-  `RutaHTML` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `RutaCSS` varchar(30) COLLATE utf8_spanish_ci NOT NULL
+  `Nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `Codigo` mediumtext COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -56,34 +43,18 @@ CREATE TABLE `footer` (
 --
 
 CREATE TABLE `header` (
-  `IDHeader` int(11) NOT NULL,
-  `RutaHTML` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `RutaCSS` varchar(30) COLLATE utf8_spanish_ci NOT NULL
+  `Nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `Codigo` mediumtext COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `plantillasfavoritas`
+-- Volcado de datos para la tabla `header`
 --
 
-CREATE TABLE `plantillasfavoritas` (
-  `IDRelación` int(11) NOT NULL,
-  `IDHTML` int(11) NOT NULL,
-  `Usuario` varchar(20) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `plantillashtml`
---
-
-CREATE TABLE `plantillashtml` (
-  `IDPlantilla` int(11) NOT NULL,
-  `RutaHTML` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `RutaCSS` varchar(30) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+INSERT INTO `header` (`Nombre`, `Codigo`) VALUES
+('header1', '<div style=\'height: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\'><a href=\'\'><img src=\'\' alt=\'\'>LOGOTIPO</a>'),
+('header2', '<div style=\'height: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\'><a href=\'\'><img src=\'\' alt=\'\'>LOGOTIPO</a><a href=\'\'>Elemento 1</a><a href=\'\'>Elemento 2</a><a href=\'\'>Elemento 3</a><a href=\'\'>Elemento 4</a>'),
+('header3', '<div style=\'height: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\'><a href=\'\'><img src=\'\' alt=\'\'>LOGOTIPO</a><div><input type=\'text\' name=\'\' id=\'\' placeholder=\'Buscador\'><button>Buscar</button></div>');
 
 -- --------------------------------------------------------
 
@@ -98,13 +69,26 @@ CREATE TABLE `publicaciones` (
   `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `publicaciones`
+-- Estructura de tabla para la tabla `submenu`
 --
 
-INSERT INTO `publicaciones` (`ID_Publicacion`, `Usuario`, `Publicacion`, `Fecha`) VALUES
-(1, 'Usuario1', 'Esto es una prueba', '2019-05-01 20:38:15'),
-(2, 'Usuario2', 'Esto es otra prueba', '2019-05-01 20:38:29');
+CREATE TABLE `submenu` (
+  `Nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `Codigo` mediumtext COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `submenu`
+--
+
+INSERT INTO `submenu` (`Nombre`, `Codigo`) VALUES
+('submenu1', '<div style=\'height: 100%; display: flex; flex-direction: column; justify-content: space-around; align-items: center;\'><a href=\'\'>Elemento1</a><a href=\'\'>Elemento2</a><a href=\'\'>Elemento3</a><a href=\'\'>Elemento4</a></div>'),
+('submenu1L', '<div style=\'height: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\'><a href=\'\'>Elemento1</a><a href=\'\'>Elemento2</a><a href=\'\'>Elemento3</a><a href=\'\'>Elemento4</a></div>'),
+('submenu2', '<div style=\'height: 100%; display: flex; flex-direction: column; justify-content: space-around; align-items: center;\'><a href=\'\'><img src=\'\'>Imagen1</a><a href=\'\'><img src=\'\'>Imagen2</a><a href=\'\'><img src=\'\'>Imagen3</a><a href=\'\'><img src=\'\'>Imagen4</a></div>'),
+('submenu2L', '<div style=\'height: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\'><a href=\'\'><img src=\'\'>Imagen1</a><a href=\'\'><img src=\'\'>Imagen2</a><a href=\'\'><img src=\'\'>Imagen3</a><a href=\'\'><img src=\'\'>Imagen4</a></div>');
 
 -- --------------------------------------------------------
 
@@ -118,58 +102,45 @@ CREATE TABLE `usuarios` (
   `Nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Apellido1` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Apellido2` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `EMail` varchar(25) COLLATE utf8_spanish_ci NOT NULL
+  `EMail` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `Publicaciones` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`Usuario`, `Contraseña`, `Nombre`, `Apellido1`, `Apellido2`, `EMail`) VALUES
-('Usuario1', '1234', 'Usuario1', 'Usuario1', '', 'usuario1@usuario1.com'),
-('Usuario2', '1234', 'Usuario2', 'Usuario2', '', 'usurario2@usuario2.com');
+INSERT INTO `usuarios` (`Usuario`, `Contraseña`, `Nombre`, `Apellido1`, `Apellido2`, `EMail`, `Publicaciones`) VALUES
+('Usuario1', '1234', 'Usuario1', 'Usuario1', '', 'usuario1@usuario1.com', 14),
+('Usuario2', '1234', 'Usuario2', 'Usuario2', '', 'usurario2@usuario2.com', 14);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `body`
---
-ALTER TABLE `body`
-  ADD PRIMARY KEY (`IDBody`);
-
---
 -- Indices de la tabla `footer`
 --
 ALTER TABLE `footer`
-  ADD PRIMARY KEY (`IDFooter`);
+  ADD UNIQUE KEY `Nombre` (`Nombre`);
 
 --
 -- Indices de la tabla `header`
 --
 ALTER TABLE `header`
-  ADD PRIMARY KEY (`IDHeader`);
-
---
--- Indices de la tabla `plantillasfavoritas`
---
-ALTER TABLE `plantillasfavoritas`
-  ADD PRIMARY KEY (`IDRelación`),
-  ADD KEY `IDHTML` (`IDHTML`),
-  ADD KEY `Usuario` (`Usuario`);
-
---
--- Indices de la tabla `plantillashtml`
---
-ALTER TABLE `plantillashtml`
-  ADD PRIMARY KEY (`IDPlantilla`);
+  ADD PRIMARY KEY (`Nombre`);
 
 --
 -- Indices de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`ID_Publicacion`);
+
+--
+-- Indices de la tabla `submenu`
+--
+ALTER TABLE `submenu`
+  ADD PRIMARY KEY (`Nombre`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -183,51 +154,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `body`
---
-ALTER TABLE `body`
-  MODIFY `IDBody` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `footer`
---
-ALTER TABLE `footer`
-  MODIFY `IDFooter` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `header`
---
-ALTER TABLE `header`
-  MODIFY `IDHeader` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `plantillasfavoritas`
---
-ALTER TABLE `plantillasfavoritas`
-  MODIFY `IDRelación` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `plantillashtml`
---
-ALTER TABLE `plantillashtml`
-  MODIFY `IDPlantilla` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `ID_Publicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `plantillasfavoritas`
---
-ALTER TABLE `plantillasfavoritas`
-  ADD CONSTRAINT `plantillasfavoritas_ibfk_1` FOREIGN KEY (`IDHTML`) REFERENCES `plantillashtml` (`IDPlantilla`),
-  ADD CONSTRAINT `plantillasfavoritas_ibfk_2` FOREIGN KEY (`Usuario`) REFERENCES `usuarios` (`Usuario`);
+  MODIFY `ID_Publicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
