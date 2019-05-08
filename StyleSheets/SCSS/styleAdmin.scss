@@ -1,0 +1,30 @@
+@import "styleMenuHeader.scss";
+
+h1 {
+    @include estiloTitulo;
+}
+
+.cuerpo > .row > .col-md-12 {
+    @include centrarFlex;
+    @include formulario;
+}
+
+form {
+    @include formulario;
+}
+
+.error {
+    @include mensajeError;
+    width: 100%;
+}
+
+.correcto {
+    @include mensajeCorrecto;
+    width: 100%;
+}
+
+@-webkit-keyframes tiembla{
+    0%  { -webkit-transform:rotateZ(-5deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
+    100%{ -webkit-transform:rotateZ( 5deg); }
+}
