@@ -7,10 +7,14 @@ body {
 
 .header {
     @include quitarMarginPadding;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-.cuerpo {
+.cuerpo, .cuerpoCreacionWEB {
     margin-bottom: 30px;
+    margin-top: 100px;
 }
 
 .navbar {
