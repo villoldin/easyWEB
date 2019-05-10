@@ -9,6 +9,10 @@ body {
     @include quitarMarginPadding;
 }
 
+.cuerpo {
+    margin-bottom: 30px;
+}
+
 .navbar {
     width: 100%;    
     background: $colorPrincipal !important;
