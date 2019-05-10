@@ -55,6 +55,17 @@
                 echo "<p class='error'>Error: " . $sql . "</p>" . "<p class='error'>".$conexion_db->error."</p>";
             }
         }
+
+        // Eliminar publicacion
+
+        public function eliminarPublicacion($idPublicacion) {
+            $sql = "DELETE FROM PUBLICACIONES WHERE ID_PUBLICACION = ".$idPublicacion;
+            if ($this->conexion_db->query($sql) === true) {
+            } else {
+                echo "<p class='error'>Error: " . $sql . "</p>" . "<p class='error'>".$conexion_db->error."</p>";
+            }
+        }
+
     }
 
 ?>

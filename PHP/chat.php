@@ -8,9 +8,10 @@
 
     if (isset($_SESSION['user'])) {
         $usuario=$_SESSION['user'];
+        $admin = $_SESSION['admin'];
     }
 
-    error_reporting(E_ERROR | E_PARSE);
+    //error_reporting(E_ERROR | E_PARSE);
     
 ?>
 
@@ -100,7 +101,30 @@
                         $publicaciones = $objetoChat->listarPubliFechaNuevas();
                         
                         foreach ($publicaciones as $publi) {
-                            echo "<p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p>";
+                            echo "<div class='tarjetaPublicacion' id='".$publi['ID_Publicacion']."'><p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p><form action='' method='post' id='formAdmin'><input type='submit' value='Eliminar' name='btnEliminar'><input type='text' value='".$publi['ID_Publicacion']."' name='idPublicacion' id='ocultarCampo'></form></div>";
+                        }
+
+                        if ($admin != 1) {
+                    ?>
+    
+                            <script src="../JavaScript/botonEliminar.js"></script>
+
+                    <?php
+                        }
+
+                        if (isset($_POST['btnEliminar'])) {
+                            $idPublicacion = $_POST['idPublicacion'];
+                            $eliminar = $objetoChat->eliminarPublicacion($idPublicacion);
+                    ?>
+                            <script>
+                                document.getElementById('publicaciones').innerHTML = "";
+                            </script>
+                    <?php
+                            $publicaciones = $objetoChat->listarPubliFechaNuevas();
+                                                   
+                            foreach ($publicaciones as $publi) {
+                                echo "<div class='tarjetaPublicacion' id='".$publi['ID_Publicacion']."'><p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p><form action='' method='post' id='formAdmin'><input type='submit' value='Eliminar' name='btnEliminar'><input type='text' value='".$publi['ID_Publicacion']."' name='idPublicacion' id='ocultarCampo'></form></div>";
+                            }
                         }
                     ?>
 
