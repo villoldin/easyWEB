@@ -74,11 +74,11 @@ h1 {
             padding-bottom: 10px;
         }
 
-        #formAdmin > input[type=text] {
+        .formAdmin > input[type=text] {
             display: none;
         }
 
-        #formAdmin > input[type=submit] {
+        .formAdmin > input[type=submit] {
             padding: 5px 15px;
             height: 40px;
             background: $colorPrincipal;
@@ -88,7 +88,7 @@ h1 {
             margin-bottom: 10px;
         }
 
-        #formAdmin > input:hover {
+        .formAdmin > input:hover {
             background: white;
             color: $colorPrincipal;
             box-shadow: $sombraCaja;

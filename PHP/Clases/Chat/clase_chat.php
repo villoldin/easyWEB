@@ -8,38 +8,19 @@
             parent::__construct();
         }
 
-        // Mostrar publicaciones por fecha (más nuevas)
+        // Mostrar publicaciones
 
-        public function listarPubliFechaNuevas() {
-            $sql = "SELECT * FROM PUBLICACIONES ORDER BY FECHA DESC LIMIT 100";
+        public function listarPublicaciones($tema) {
+            $sql = "SELECT * FROM PUBLICACIONES WHERE TEMA = '".$tema."' ORDER BY FECHA DESC LIMIT 100";
             $resultado = $this->conexion_db->query($sql);
             $listaNuevas = $resultado->fetch_all(MYSQLI_ASSOC);
             return $listaNuevas;            
-        }   
-        
-        // Mostrar publicaciones por fecha (más viejas)
+        }
 
-        public function listarPubliFechaViejas() {
-            $sql = "SELECT * FROM PUBLICACIONES ORDER BY FECHA ASC";
-            $resultado = $this->conexion_db->query($sql);
-            $listaViejas = $resultado->fetch_all(MYSQLI_ASSOC);
-            return $listaViejas;            
-        }   
+        // Publicar en el chat
 
-        
-        // Mostrar publicaciones por más votado
-
-        public function listarPubliPositivos() {
-            $sql = "SELECT * FROM PUBLICACIONES ORDER BY VOTOS_POSITIVOS";
-            $resultado = $this->conexion_db->query($sql);
-            $listaPositivos = $resultado->fetch_all(MYSQLI_ASSOC);
-            return $listaPositivos;            
-        } 
-
-        // Publicar en el foro
-
-        public function publicar($user, $publicacion, $fecha) {
-            $sql = "INSERT INTO PUBLICACIONES (USUARIO, PUBLICACION, FECHA) VALUES ('".$user."', '".$publicacion."', '".$fecha."')";
+        public function publicar($user, $publicacion, $fecha, $tema) {
+            $sql = "INSERT INTO PUBLICACIONES (USUARIO, PUBLICACION, FECHA, TEMA) VALUES ('".$user."', '".$publicacion."', '".$fecha."', '".$tema."')";
             if ($this->conexion_db->query($sql) === true) {
             } else {
                 echo "<p class='error'>Error: " . $sql . "</p>" . "<p class='error'>".$conexion_db->error."</p>";

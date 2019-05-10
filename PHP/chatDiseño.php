@@ -6,6 +6,8 @@
 
     $objetoChat = new Chat();
 
+    $tema = 'diseño';
+
     if (isset($_SESSION['user'])) {
         $usuario=$_SESSION['user'];
         $admin = $_SESSION['admin'];
@@ -49,7 +51,7 @@
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-laptop-code"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href=""><i class="far fa-comments"></i> Chat</a>
+                        <a class="nav-link" href="chatTemas.php"><i class="far fa-comments"></i> Chat</a>
                     </li>
                 </ul>
                 <ul id="logIn">
@@ -69,9 +71,9 @@
     <div class="container cuerpo">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="far fa-comments"></i> Chat EasyWEB</h1>
+                <h1><i class="fab fa-sass"></i> Chat Diseño</h1>
                 <div class='col-md-12' id='formPublicacion'>
-                    <form action="chat.php" method="post">
+                    <form action="chatDiseño.php" method="post">
                         <input type="text" name="publicacion" id="publicacion" placeholder="Escribe tu publicación ...">
                         <input type="submit" value="Publicar" name="btnPublicar" id="publicar">
                     </form>
@@ -86,9 +88,9 @@
                                 $fecha = date("Y-m-d");
                                 $horaActual = date("H:i:s");
                                 $fecha = date("Y-m-d H:i:s", strtotime($fecha . $horaActual));
-                                $publicar = $objetoChat->publicar($usuario, $publicacion, $fecha);
+                                $publicar = $objetoChat->publicar($usuario, $publicacion, $fecha, $tema);
                                 $publicar = $objetoChat->actualizarPublicaciones($usuario);
-                                header('Location: chat.php');
+                                header('Location: chatDiseño.php');
                             }
                             
                         }
@@ -98,19 +100,16 @@
                 <div id="publicaciones">                    
                     
                     <?php
-                        $publicaciones = $objetoChat->listarPubliFechaNuevas();
+                        $publicaciones = $objetoChat->listarPublicaciones($tema);
                         
                         foreach ($publicaciones as $publi) {
-                            echo "<div class='tarjetaPublicacion' id='".$publi['ID_Publicacion']."'><p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p><form action='' method='post' id='formAdmin'><input type='submit' value='Eliminar' name='btnEliminar'><input type='text' value='".$publi['ID_Publicacion']."' name='idPublicacion' id='ocultarCampo'></form></div>";
-                        }
-
-                        if ($admin != 1) {
-                    ?>
-    
-                            <script src="../JavaScript/botonEliminar.js"></script>
-
-                    <?php
-                        }
+                            echo "<div class='tarjetaPublicacion' id='".$publi['ID_Publicacion']."'><p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p><form action='' method='post' class='formAdmin'><input type='submit' value='Eliminar' name='btnEliminar'><input type='text' value='".$publi['ID_Publicacion']."' name='idPublicacion' id='ocultarCampo'></form></div>";
+                            if ($admin != 1) {
+                                ?>                
+                                <script src="../JavaScript/botonEliminar.js"></script>
+                                <?php
+                            }
+                        }                        
 
                         if (isset($_POST['btnEliminar'])) {
                             $idPublicacion = $_POST['idPublicacion'];
@@ -119,15 +118,20 @@
                             <script>
                                 document.getElementById('publicaciones').innerHTML = "";
                             </script>
-                    <?php
-                            $publicaciones = $objetoChat->listarPubliFechaNuevas();
-                                                   
+                    <?php 
+                            $publicaciones = $objetoChat->listarPublicaciones($tema);
+                        
                             foreach ($publicaciones as $publi) {
-                                echo "<div class='tarjetaPublicacion' id='".$publi['ID_Publicacion']."'><p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p><form action='' method='post' id='formAdmin'><input type='submit' value='Eliminar' name='btnEliminar'><input type='text' value='".$publi['ID_Publicacion']."' name='idPublicacion' id='ocultarCampo'></form></div>";
-                            }
-                        }
+                                echo "<div class='tarjetaPublicacion' id='".$publi['ID_Publicacion']."'><p id='usuario'>".$publi['Usuario']."</p><p id='fecha'>".$publi['Fecha']."</p><p id='publicacion'>".$publi['Publicacion']."</p><form action='' method='post' class='formAdmin'><input type='submit' value='Eliminar' name='btnEliminar'><input type='text' value='".$publi['ID_Publicacion']."' name='idPublicacion' id='ocultarCampo'></form></div>";
+                                if ($admin != 1) {
+                                    ?>                
+                                    <script src="../JavaScript/botonEliminar.js"></script>
+                                    <?php
+                                }
+                            } 
+                        }                      
+                    
                     ?>
-
                 </div>
             </div>            
         </div>

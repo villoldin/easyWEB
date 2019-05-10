@@ -1,2 +1,2 @@
-var formulario = document.getElementById("formAdmin");
+var formulario = document.getElementsByClassName("formAdmin");
 $(formulario).css("display", "none");

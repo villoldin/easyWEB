@@ -1,0 +1,61 @@
+@import "styleMenuHeader.scss";
+
+h1 {
+    @include estiloTitulo;
+}
+
+#indicacion {
+    font-size: 120%;
+}
+
+.temas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 40px;
+
+    .tarjetaTema {
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: $colorPrincipal;
+        border: 2px solid $colorPrincipal;
+        border-radius: 20px;
+        padding: 15px;
+        margin-bottom: 30px;
+    
+        .iconoTema {
+            width: 100%;
+            text-align: center;
+            font-size: 700%;
+            font-weight: normal;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+            font-size: 200%;
+            font-weight: bold;
+        }
+    
+    }
+
+    .tarjetaTema:hover {
+        box-shadow: $sombraCaja;
+    }
+
+}
+
+@media (max-width: 600px) {
+    
+    .temas {
+
+        .tarjetaTema {
+            width: 80%;
+        }
+
+    }
+}
+

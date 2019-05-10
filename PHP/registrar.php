@@ -38,7 +38,7 @@
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-laptop-code"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="chat.php"><i class="far fa-comments"></i> Chat</a>
+                        <a class="nav-link" href="chatTemas.php"><i class="far fa-comments"></i> Chat</a>
                     </li>
                 </ul>
                 <ul id="logIn">                    
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1><i class="fas fa-user-plus"></i> Registro en EasyWEB</h1>
-                <p>Al crear un perfil en EasyWEB accedes a la creacción de tus propios diseños y compartir tus dudas y comentarios en nuestro foro</p>
+                <p>Al crear un perfil en EasyWEB accedes a la creacción de tus propios diseños y compartir tus dudas y comentarios en nuestros chats</p>
                 <form action="registrar.php" name="registro" method="post" id="formSesion">
                     <label for="usuario">Usuario (*)</label>
                     <input type="text" name="usuario" id="usuario">
