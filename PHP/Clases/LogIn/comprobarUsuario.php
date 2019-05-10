@@ -29,7 +29,16 @@
                     
                 session_start();
 
+                $esAdmin = $objetoLogin->esAdmin($_POST['usuario']);
+
                 $_SESSION['user'] = $_POST['usuario'];
+
+                if ($esAdmin === true) {
+                    $_SESSION['admin'] = "1";
+                } else {
+                    $_SESSION['admin'] = "0";
+                }
+
                 $error = '';
                 $usuario = $_POST['usuario'];
                 header("Location: ../../../inicioLog.php");

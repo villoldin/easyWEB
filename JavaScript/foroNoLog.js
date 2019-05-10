@@ -8,6 +8,8 @@ $(publicar).css('display', 'none');
 
 var foroLog = document.getElementById('foroLog');
 var foroNoLog = document.getElementById('foroNoLog');
+var formulario = document.getElementById("formAdmin");
 
 $(foroLog).css('display', 'none');
 $(foroNoLog).css('display', 'flex');
+$(formulario).css("display", "none");

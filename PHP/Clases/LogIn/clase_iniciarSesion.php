@@ -20,6 +20,18 @@
             return false;            
         }       
 
+        // Comprueba si el usuario es administrador
+
+        public function esAdmin($user) {
+            $sql = "SELECT COUNT(*) as 'cont' FROM USUARIOS WHERE USUARIO='$user' and ADMINISTRADOR = 1;";
+            $resultado = $this->conexion_db->query($sql);
+            $existe = $resultado->fetch_all(MYSQLI_ASSOC);
+            if($existe[0]['cont'] > 0){
+                return true;
+            }
+            return false;            
+        }    
+
     }
 
 ?>

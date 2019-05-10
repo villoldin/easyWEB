@@ -38,7 +38,7 @@
                         <a class="nav-link" href="crearWEB.php"><i class="fas fa-laptop-code"></i> Crea tu propia WEB</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="chat.php"><i class="far fa-comments"></i> Chat</a>
+                        <a class="nav-link" href="chatTemas.php"><i class="far fa-comments"></i> Chat</a>
                     </li>
                 </ul>
                 <ul id="logIn">
@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1><i class="fas fa-user"></i> Iniciar sesión</h1>
-                <p>Para poder disfrutar del servicio de "Crea tu propia WEB" y publicar en nuestro foro debe usted estar registrado</p>
+                <p>Para poder disfrutar del servicio de "Crea tu propia WEB" y publicar en nuestros chats debe usted estar registrado</p>
 
                 <?php
                     if (isset($_POST['send'])) {

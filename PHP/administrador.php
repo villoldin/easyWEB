@@ -1,15 +1,11 @@
 <?php
     
-    require "./Clases/MiPerfil/clase_perfil.php";
+    require "./Clases/Administrador/clase_administrador.php";
 
-    $miPerfil = new Perfil();
+    $administrador = new Admin();
 
     $usuario = $_SESSION['user'];
     $admin  = $_SESSION['admin'];
-
-    if ($admin == 1) {
-        header("Location: administrador.php");
-    }
 
     error_reporting(0);
 
@@ -26,7 +22,7 @@
     <link rel="stylesheet" href="../Frameworks/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleMiPerfil.css">
+    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleAdmin.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="../Frameworks/JQuery.js"></script>
     
@@ -64,10 +60,10 @@
     <div class="container cuerpo">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="fas fa-user"></i> Mi perfil</h1>
+                <h1><i class="fas fa-user"></i> Perfil administrador</h1>
 
                 <?php
-                    $infoPerfil = $miPerfil->datosUsuario($usuario);
+                    $infoPerfil = $administrador->datosUsuario($usuario);
                 ?>
 
                 <form action="miPerfil.php" name="datosPerfil" method="post">
@@ -87,17 +83,69 @@
 
                     <?php
 
-                        $existeMail = $miPerfil->existeMail($_POST['email']);
+                        $existeMail = $administrador->existeMail($_POST['email']);
 
                         if (isset($_POST['btnEditar'])) {
                             $mailNuevo = $_POST['email'];
                             if($mailNuevo == "") {
-                                echo "<p class='error'>No puede haber ningun campo vacio</p>";
+                                echo "<p class='error'>No puede haber ningún campo vacio</p>";
                             } else {    
                                 if ($existeMail === true) {
                                     echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
                                 } else {
                                     $edicionMail = $miPerfil->editarMail($mailNuevo, $usuario);
+                                }
+                            }
+                        }
+                        
+                    ?>
+
+                </form>
+                <h1><i class="fas fa-user-shield"></i> Hacer a un usuario Administrador</h1>
+                <form action="administrador.php" name="hacerAdmin" method="post">
+                    <label for="usuarioAdmin">Usuario para administrador</label>
+                    <input type="text" name="usuarioAdmin" id="usuario">                    
+                    <input type="submit" name="btnAddAdmin" value="Hacer administrador">
+
+                    <?php
+
+                        $existeUsuario = $administrador->existeUsuario($_POST['usuarioAdmin']);
+
+                        if (isset($_POST['btnAddAdmin'])) {
+                            $usuarioAdmin = $_POST['usuarioAdmin'];
+                            if($usuarioAdmin == "") {
+                                echo "<p class='error'>No puede haber ningún campo vacio</p>";
+                            } else {    
+                                if ($existeUsuario === false) {
+                                    echo '<div class="error"><p>El usuario no está registrado</p></div>';
+                                } else {
+                                    $hacerAdministrador = $administrador->hacerAdmin($_POST['usuarioAdmin']);
+                                }
+                            }
+                        }
+                        
+                    ?>
+
+                </form>
+                <h1><i class="fas fa-user-times"></i> Borrar usuario</h1>
+                <form action="administrador.php" name="borrarUser" method="post">
+                    <label for="usuarioBorrar">Usuario a borrar</label>
+                    <input type="text" name="usuarioBorrar" id="usuario">                    
+                    <input type="submit" name="btnDeleteUser" value="Borrar usuario">
+
+                    <?php
+
+                        $existeUsuario = $administrador->existeUsuario($_POST['usuarioBorrar']);
+
+                        if (isset($_POST['btnDeleteUser'])) {
+                            $usuarioBorrar = $_POST['usuarioBorrar'];
+                            if($usuarioBorrar == "") {
+                                echo "<p class='error'>No puede haber ningún campo vacio</p>";
+                            } else {    
+                                if ($existeUsuario === false) {
+                                    echo '<div class="error"><p>El usuario no existe</p></div>';
+                                } else {
+                                    $borrarUsuario = $administrador->borrarUsuario($_POST['usuarioBorrar']);
                                 }
                             }
                         }

@@ -42,7 +42,7 @@
                     <li class="nav-item d-none d-sm-none d-md-none d-lg-block">
                         <a class="nav-link" href="PHP/crearWEB.php"><i class="fas fa-laptop-code"></i> Crea tu propia WEB</a></li>
                     <li class="nav-item">
-                            <a class="nav-link" href="PHP/chat.php"><i class="far fa-comments"></i> Chat</a>
+                            <a class="nav-link" href="PHP/chatTemas.php"><i class="far fa-comments"></i> Chat</a>
                     </li>
                 </ul>
                 <ul id="logIn">
