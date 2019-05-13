@@ -100,6 +100,15 @@
     </div>
 
     <script src="../JavaScript/chatTemas.js"></script>
+
+    <!--- Comprobación que comprueba si estas log para desbloquear opciones -->
+
+    <?php  
+        if (!isset($_SESSION['user'])) {
+    ?>
+    <script src="../JavaScript/foroNoLog.js"></script>
+    <?php } ?>        
+    
 </body>
 
 </html>
