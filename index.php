@@ -64,7 +64,6 @@
             <p>Indicaciones:</p>
             <ul>
                 <li>Color de fondo y color de letra: para indicar el color lo puedes hacer con el nombre del color en inglés, en código hexadecimal o RGB.</li>
-                <li>Tamaño de letra: para indicar el tamaño de letra lo puedes hacer tanto en px, en % o en cualquier formato que acepte CSS.</li>
                 <li>Borde: esta opción pone y quita un borde negro de 1px de grosor.</li>
                 <li>Sombra: esta opción pone y quita una sombra para añadir volumen a los elementos.</li>
             </ul>
