@@ -11,6 +11,26 @@ h1 {
 
 form {
     @include formulario;
+
+    a {
+        width: 30%;
+    }
+
+    #btnCambiar {
+        margin-top: 15px;
+        width: 100%;
+        padding: 5px;
+        background: $colorPrincipal;
+        color: white;
+        border: solid 2px $colorPrincipal;
+        border-radius: 20px;
+    }
+
+    #btnCambiar:hover {
+        background: white;
+        color: $colorPrincipal;   
+        box-shadow: $sombraCaja;
+    }
 }
 
 .error {
@@ -24,7 +44,19 @@ form {
 }
 
 @-webkit-keyframes tiembla{
-    0%  { -webkit-transform:rotateZ(-5deg); }
-    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
-    100%{ -webkit-transform:rotateZ( 5deg); }
+    0%  { -webkit-transform:rotateZ( 0deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.95); }
+    100%{ -webkit-transform:rotateZ( 0deg); }
+}
+
+@media (max-width: 1000px) {  
+
+    form {
+
+        a {
+            width: 65%;
+        }
+
+    }
+
 }

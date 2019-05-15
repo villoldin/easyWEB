@@ -80,6 +80,7 @@
                     <label for="publicaciones">Publicaciones</label>
                     <input type="text" name="publicaciones" id="publicaciones" value="<?php echo $infoPerfil[0]['Publicaciones']?>" disabled>
                     <input type="submit" name="btnEditar" value="Editar email">
+                    
 
                     <?php
 
@@ -93,7 +94,37 @@
                                 if ($existeMail === true) {
                                     echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
                                 } else {
-                                    $edicionMail = $miPerfil->editarMail($mailNuevo, $usuario);
+                                    $edicionMail = $administrador->editarMail($mailNuevo, $usuario);
+                                }
+                            }
+                        }
+                        
+                    ?>
+
+                </form>      
+                <h1><i class="fas fa-key"></i> Cambiar contraseña</h1>          
+                <form action="" name="cambioPass" method="post">
+                    <label for="pass">Nueva contraseña</label>
+                    <input type="password" name="pass" id="pass">
+                    <label for="nombre">Confirmar contraseña</label>
+                    <input type="password" name="confPass" id="confPass">
+                    <input type="submit" name="btnCambiar" value="Cambiar contraseña">
+
+                    <?php
+
+                        if (isset($_POST['btnCambiar'])) {
+                            $passNueva = $_POST['pass'];
+                            $confPassNueva = $_POST['confPass'];
+
+                            if($passNueva == "" || $confPassNueva == "") {
+                                echo "<p class='error'>No puede haber ningun campo vacio</p>";
+                            } else if (strlen($passNueva) < 8) {
+                                echo '<div class="error"><p>La contraseña debe tener mínimo 8 caracteres</p></div>';
+                            } else {
+                                if ($passNueva != $confPassNueva) {
+                                    echo '<div class="error"><p>Las contraseñas no coinciden</p></div>';
+                                } else {
+                                    $cambioPass = $administrador->cambiarContraseña($passNueva, $usuario);
                                 }
                             }
                         }

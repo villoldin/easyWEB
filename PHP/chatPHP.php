@@ -9,11 +9,11 @@
     $tema = 'PHP';
 
     if (isset($_SESSION['user'])) {
-        $usuario=$_SESSION['user'];
+        $usuario = $_SESSION['user'];
         $admin = $_SESSION['admin'];
     }
 
-    //error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
     
 ?>
 

@@ -93,6 +93,8 @@
                                 echo '<div class="error"><p>Usuario ya registrado en easyWEB</p></div>';
                             } else if ($existeMail === true) {
                                 echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
+                            } else if (strlen($pass) < 8) {
+                                echo '<div class="error"><p>La contraseña debe tener mínimo 8 caracteres</p></div>';
                             } else if ($pass != $confPass) {
                                 echo '<div class="error"><p>Contraseñas diferentes</p></div>';
                             } else {

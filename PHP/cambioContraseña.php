@@ -5,7 +5,6 @@
     $miPerfil = new Perfil();
 
     $usuario = $_SESSION['user'];
-    $admin  = $_SESSION['admin'];
 
     if ($admin == 1) {
         header("Location: administrador.php");
@@ -64,50 +63,13 @@
     <div class="container cuerpo">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="fas fa-user"></i> Mi perfil</h1>
+                <h1><i class="fas fa-user"></i> Cabio de contraseña</h1>
 
                 <?php
                     $infoPerfil = $miPerfil->datosUsuario($usuario);
                 ?>
 
-                <form action="miPerfil.php" name="datosPerfil" method="post">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" name="usuario" id="usuario" value="<?php echo $infoPerfil[0]['Usuario']?>" disabled>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" value="<?php echo $infoPerfil[0]['Nombre']?>" disabled>
-                    <label for="apellido1">Primer apellido</label>
-                    <input type="text" name="apellido1" id="apellido1" value="<?php echo $infoPerfil[0]['Apellido1']?>" disabled>
-                    <label for="apellido2">Segundo apellido</label>
-                    <input type="text" name="apellido2" id="apellido2" value="<?php echo $infoPerfil[0]['Apellido2']?>" disabled>
-                    <label for="email">E-Mail</label>
-                    <input type="email" name="email" id="email" value="<?php echo $infoPerfil[0]['EMail']?>">
-                    <label for="publicaciones">Publicaciones</label>
-                    <input type="text" name="publicaciones" id="publicaciones" value="<?php echo $infoPerfil[0]['Publicaciones']?>" disabled>
-                    <input type="submit" name="btnEditar" value="Editar email">
-                    <a href="cambioContraseña.php"><button id="btnCambiar">Cambiar contraseña</button></a>
-
-                    <?php
-
-                        $existeMail = $miPerfil->existeMail($_POST['email']);
-
-                        if (isset($_POST['btnEditar'])) {
-                            $mailNuevo = $_POST['email'];
-                            if($mailNuevo == "") {
-                                echo "<p class='error'>No puede haber ningun campo vacio</p>";
-                            } else {    
-                                if ($existeMail === true) {
-                                    echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
-                                } else {
-                                    $edicionMail = $miPerfil->editarMail($mailNuevo, $usuario);
-                                }
-                            }
-                        }
-                        
-                    ?>
-
-                </form>
-                <h1><i class="fas fa-key"></i> Cambiar contraseña</h1>          
-                <form action="" name="cambioPass" method="post">
+                <form action="cambioContraseña.php" name="cambioPass" method="post">
                     <label for="pass">Nueva contraseña</label>
                     <input type="password" name="pass" id="pass">
                     <label for="nombre">Confirmar contraseña</label>
@@ -122,8 +84,6 @@
 
                             if($passNueva == "" || $confPassNueva == "") {
                                 echo "<p class='error'>No puede haber ningun campo vacio</p>";
-                            } else if (strlen($passNueva) < 8) {
-                                echo '<div class="error"><p>La contraseña debe tener mínimo 8 caracteres</p></div>';
                             } else {    
                                 if ($passNueva != $confPassNueva) {
                                     echo '<div class="error"><p>Las contraseñas no coinciden</p></div>';

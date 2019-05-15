@@ -76,6 +76,17 @@
             }
         }
 
+        // Cambiar contraseña
+
+        public function cambiarContraseña($pass, $user) {
+            $sql = "UPDATE USUARIOS SET CONTRASEÑA = \"$pass\" WHERE USUARIO = \"$user\";";
+            if ($this->conexion_db->query($sql) === true) {
+                echo "<p class='correcto'>Contraseña cambiada</p>";
+            } else {
+                echo "<p class='error'>Error: " . $sql . "</p>" . "<p class='error'>".$conexion_db->error."</p>";
+            }
+        }
+
     }
 
 ?>
