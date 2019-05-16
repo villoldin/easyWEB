@@ -2,6 +2,12 @@
 
     require "Clases/Registrar/clase_registrar.php";
 
+    session_start();
+
+    if (isset($_SESSION['user'])) {
+        header("Location: ../inicioLog.php");
+    }
+
     $objetoRegistro = new Registro();
 
 ?>

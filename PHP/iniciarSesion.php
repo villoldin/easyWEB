@@ -2,6 +2,11 @@
 
     session_start();
 
+    if (isset($_SESSION['user'])) {
+        header("Location: ../inicioLog.php");
+    }
+
+
     error_reporting(E_ERROR | E_PARSE);
 
 ?>
