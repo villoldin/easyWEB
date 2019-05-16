@@ -9,7 +9,7 @@
     $tema = 'javascript';
 
     if (isset($_SESSION['user'])) {
-        $usuario=$_SESSION['user'];
+        $usuario = $_SESSION['user'];
         $admin = $_SESSION['admin'];
     }
 

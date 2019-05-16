@@ -1,13 +1,16 @@
 <?php
+    
+    require "./Clases/MiPerfil/clase_perfil.php";
 
-    session_start();
+    $miPerfil = new Perfil();
 
-    if (isset($_SESSION['user'])) {
-        header("Location: ../inicioLog.php");
+    $usuario = $_SESSION['user'];
+
+    if ($admin == 1) {
+        header("Location: administrador.php");
     }
 
-
-    error_reporting(E_ERROR | E_PARSE);
+    error_reporting(0);
 
 ?>
 
@@ -22,9 +25,10 @@
     <link rel="stylesheet" href="../Frameworks/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleIniciarSesion.css">
+    <link rel="stylesheet" href="../StyleSheets/CSS_Compiled/styleMiPerfil.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <script src="../Frameworks/JQuery.js"></script>
+    
 </head>
 
 <body>
@@ -35,6 +39,7 @@
                 <span class="navbar-toggler-icon"></span> </button>
                 <a class="navbar-brand" href="../index.php">EasyWEB</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Inicio<span class="sr-only">(current)</span></a>
@@ -46,58 +51,54 @@
                         <a class="nav-link" href="chatTemas.php"><i class="far fa-comments"></i> Chat</a>
                     </li>
                 </ul>
-                <ul id="logIn">
-                    <li class="noLog"><a class="nav-link" href="iniciarSesion.php"><i class="fas fa-user"></i> Iniciar sesión</a></li>
-                    <li class="noLog"><a class="nav-link" href="registrar.php"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+                <ul id="logIn">                    
+                    <li class="log"><a class="nav-link" href="#"><i class="fas fa-user"></i> Mi perfil</a></li>
+                    <li class="log"><a class="nav-link" href="Clases/LogIn/cerrarSesion.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
                 </ul>
-
             </div>
         </nav>
+        <script src="../JavaScript/menuDesplegable.js"></script>
     </div>
 
     <div class="container cuerpo">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="fas fa-user"></i> Iniciar sesión</h1>
-                <p>Para poder disfrutar del servicio de "Crea tu propia WEB" y publicar en nuestros chats debe usted estar registrado</p>
+                <h1><i class="fas fa-user"></i> Cabio de contraseña</h1>
 
                 <?php
-                    if (isset($_POST['send'])) {
-                        if ($_POST['usuario'] == '' || $_POST['pass'] == '') {
-                            echo '<div class="error"><p>No puede haber campos vacíos</p></div>';
-                        }
-                    }
+                    $infoPerfil = $miPerfil->datosUsuario($usuario);
                 ?>
 
-                <form action="Clases/LogIn/comprobarUsuario.php" name="login" method="post" id="formSesion">
+                <form action="cambioContraseña.php" name="cambioPass" method="post">
+                    <label for="pass">Nueva contraseña</label>
+                    <input type="password" name="pass" id="pass">
+                    <label for="nombre">Confirmar contraseña</label>
+                    <input type="password" name="confPass" id="confPass">
+                    <input type="submit" name="btnCambiar" value="Cambiar contraseña">
 
                     <?php
-                        if (!empty($_GET['error'])): 
-                    ?>
-                    <div class="error" >
-                        <p><?=$_GET['error']?></p>
-                    </div>
-                    <?php endif;?>
 
-                    <label for="usuario">Usuario</label>
-                    <input type="text" name="usuario" id="usuario">
-                    <label for="pass">Contraseña</label>
-                    <input type="password" name="pass" id="pass">
-                    <input type="button" value="Borrar campos" id="btnReset">
-                    <input type="submit" value="Iniciar sesión" name="send">
+                        if (isset($_POST['btnCambiar'])) {
+                            $passNueva = $_POST['pass'];
+                            $confPassNueva = $_POST['confPass'];
+
+                            if($passNueva == "" || $confPassNueva == "") {
+                                echo "<p class='error'>No puede haber ningun campo vacio</p>";
+                            } else {    
+                                if ($passNueva != $confPassNueva) {
+                                    echo '<div class="error"><p>Las contraseñas no coinciden</p></div>';
+                                } else {
+                                    $cambioPass = $miPerfil->cambiarContraseña($passNueva, $usuario);
+                                }
+                            }
+                        }
+                        
+                    ?>
+
                 </form>
-                <div id="avisoRegistro">
-                    <p>Si todavía no tienes cuenta en EasyWEB</p>
-                    <a href="registrar.php"><button>Resgistrate aquí</button></a>
-                </div>                               
             </div>
         </div>
-    </div>
-
-
-
-    <script src="../JavaScript/logIn.js"></script>
-    <script src="../JavaScript/menuDesplegable.js"></script>
+    </div>    
 </body>
 
 </html>

@@ -16,7 +16,7 @@ h1 {
         width: 79%;
         margin-bottom: 10px;       
         height: 50px;
-        border: 1px solid $colorPrincipal;
+        border: 2px solid $colorPrincipal;
         border-radius: 20px;
         padding-left: 10px;
 
@@ -108,9 +108,9 @@ h1 {
 }
 
 @-webkit-keyframes tiembla{
-    0%  { -webkit-transform:rotateZ(-5deg); }
-    50% { -webkit-transform:rotateZ( 0deg) scale(.8); }
-    100%{ -webkit-transform:rotateZ( 5deg); }
+    0%  { -webkit-transform:rotateZ( 0deg); }
+    50% { -webkit-transform:rotateZ( 0deg) scale(.95); }
+    100%{ -webkit-transform:rotateZ( 0deg); }
 }
 
 @media (max-width: 510px) {
