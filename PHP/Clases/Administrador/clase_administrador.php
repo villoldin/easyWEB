@@ -31,7 +31,7 @@
             return false;            
         }    
         
-        // Editar eMail
+        // Editamos el eMail del usuario que tenga iniciada la sesión
 
         public function editarMail($mail, $user) {
             $sql = "UPDATE USUARIOS SET EMAIL = \"$mail\" WHERE USUARIO = \"$user\";";
@@ -42,7 +42,7 @@
             }
         }
 
-        // Comprueba si existe el usuario
+        // Comprueba si existe el usuario en la plataforma
 
         public function existeUsuario($user) {
             $sql = "SELECT COUNT(*) as 'cont' FROM USUARIOS WHERE USUARIO='$user';";
@@ -54,7 +54,7 @@
             return false;            
         }  
         
-        // Hacer usuario administrador
+        // Hacer al usuario indicado administrador
 
         public function hacerAdmin($user) {
             $sql = "UPDATE USUARIOS SET ADMINISTRADOR = 1 WHERE USUARIO = \"$user\";";
@@ -65,7 +65,7 @@
             }
         }
 
-        // Borrar usuario
+        // Borrar usuario indicado
 
         public function borrarUsuario($user) {
             $sql = "DELETE FROM USUARIOS WHERE USUARIO = \"$user\";";
@@ -76,7 +76,7 @@
             }
         }
 
-        // Cambiar contraseña
+        // Cambiar contraseña del usuario iniciado sesión
 
         public function cambiarContraseña($pass, $user) {
             $sql = "UPDATE USUARIOS SET CONTRASEÑA = \"$pass\" WHERE USUARIO = \"$user\";";

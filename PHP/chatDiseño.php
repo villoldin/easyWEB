@@ -13,7 +13,7 @@
         $admin = $_SESSION['admin'];
     }
 
-    //error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
     
 ?>
 
@@ -137,8 +137,6 @@
         </div>
     </div>
 
-    <script src="../JavaScript/foro.js"></script>
-    
     <!--- Comprobación que comprueba si estas log para desbloquear opciones -->
 
     <?php  

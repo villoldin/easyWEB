@@ -1,5 +1,7 @@
 <?php
 
+    // Creamos la conexión con la base de datos
+
     require ("config.php");
     
     class Conexion{

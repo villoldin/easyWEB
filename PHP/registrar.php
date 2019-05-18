@@ -10,6 +10,8 @@
 
     $objetoRegistro = new Registro();
 
+    error_reporting(0);
+
 ?>
 
 <!DOCTYPE html>

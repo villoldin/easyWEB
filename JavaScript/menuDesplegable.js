@@ -1,3 +1,5 @@
+// Despliega el menú principal en la sersión móvil
+
 var estadoMenu = 0;
 
 $('.navbar-toggler').click(function (e) { 

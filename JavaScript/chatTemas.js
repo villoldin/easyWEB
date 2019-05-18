@@ -1,3 +1,6 @@
+// Elección de temática del chat
+// Dependiendo de la tarjeta que elijas te direje al chat elejido
+
 var javascript = document.getElementById("javascript");
 var php = document.getElementById("php");
 var java = document.getElementById("java");

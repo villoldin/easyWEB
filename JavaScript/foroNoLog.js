@@ -1,10 +1,10 @@
-// Mostrar solo la opcion de publicar si estas log
+// Mostrar solo la opcion de publicar si has iniciado sesión o no
 
 var publicar = document.getElementById('formPublicacion');
 
 $(publicar).css('display', 'none');
 
-// Cambiar cabecera
+// Cambiar cabecera dependiendo si has iniciado sesión o no
 
 var foroLog = document.getElementById('foroLog');
 var foroNoLog = document.getElementById('foroNoLog');

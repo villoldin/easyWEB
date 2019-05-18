@@ -10,7 +10,7 @@ var cabeceraIframe = $(iframe).contents().find('header');
 var cuerpoIframe = $(iframe).contents().find('div#cuerpo');
 var footerIframe = $(iframe).contents().find('footer');
 
-            // Declaramos las variables que contienen los distintos elementos
+            // Declaramos las variables que contienen los distintos elementos de personalización
 
 var header1 = "<div style='height: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center;'><a href=''><img src='' alt=''>LOGOTIPO</a>";
 var header2 = "<div style='height: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center;'><a href=''><img src='' alt=''>LOGOTIPO</a><a href=''>Elemento 1</a><a href=''>Elemento 2</a><a href=''>Elemento 3</a><a href=''>Elemento 4</a></div>";

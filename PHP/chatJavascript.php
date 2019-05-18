@@ -136,8 +136,6 @@
             </div>            
         </div>
     </div>
-
-    <script src="../JavaScript/foro.js"></script>
     
     <!--- Comprobación que comprueba si estas log para desbloquear opciones -->
 
