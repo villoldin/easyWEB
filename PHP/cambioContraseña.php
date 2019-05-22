@@ -88,7 +88,7 @@
                                 if ($passNueva != $confPassNueva) {
                                     echo '<div class="error"><p>Las contraseñas no coinciden</p></div>';
                                 } else {
-                                    $cambioPass = $miPerfil->cambiarContraseña($passNueva, $usuario);
+                                    $cambioPass = $miPerfil->cambiarContraseña(password_hash ($passNueva , PASSWORD_DEFAULT), $usuario);
                                 }
                             }
                         }

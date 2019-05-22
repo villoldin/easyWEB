@@ -64,14 +64,15 @@
 
     <div class="cuerpoCreacionWEB">
         <div class='row'>
-            <div class="col-md-12" id="menuCreacion">
+            <div class="col-md-10" id="menuCreacion">
                 <h1 class="container titulo"><i class="fas fa-chalkboard"></i> Crea tu propia WEB</h1>
-                <iframe src="" frameborder="0" id="lienzo">
-
+                <iframe src="../Plantillas/avisoPlantillas.html" frameborder="0" id="lienzo">
                 </iframe>
-                <label id="generarCodigo">Pulsa aqui para generar el código que has creado </label> <a id="descargar"><button id="btnGenerar">Generar código</button></a>
+                <div id="menuGenerar">
+                    <label id="generarCodigo">Pulsa aqui para generar el código que has creado </label> <a id="descargar"><button id="btnGenerar">Generar código</button></a>
+                </div>
             </div>
-            <div class="col-md-0" id="menuLateral">
+            <div class="col-md-2" id="menuLateral">
                 <div id="menuLateralContenido">
                     <div id="plantillasDisponibles">                        
                         <div class="tarjetaPlantilla" id="Plantilla1">

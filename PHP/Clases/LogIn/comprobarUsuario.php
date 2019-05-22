@@ -20,10 +20,10 @@
 
             $objetoLogin = new Login();
 
-            $existeUsuario = $objetoLogin->existeUsuario($_POST['usuario'], $_POST['pass']);
+            $verificarPass = $objetoLogin->verificarPass($_POST['usuario'], $_POST['pass']);
     
             
-            if ($existeUsuario === true) {
+            if ($verificarPass === true) {
 
                 // Si existe usuario crearemos una cookie con el usuario                
                     

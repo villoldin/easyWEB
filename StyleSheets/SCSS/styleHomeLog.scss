@@ -6,6 +6,10 @@ h1 {
 
 .cuerpo {
     padding-bottom: 40px;
+
+    div {
+        margin: 0px;
+    }
     
     h1:nth-child(1) {
         margin-top: 10px;
@@ -55,10 +59,6 @@ h1 {
         flex-wrap: wrap;
         border: 2px solid $colorPrincipal;
         border-radius: 20px;
-    }
-
-    div:hover {
-        box-shadow: $sombraCaja;
     }
 
     div > p {

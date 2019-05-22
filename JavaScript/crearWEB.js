@@ -94,7 +94,7 @@ $("#Plantilla4").mousedown(function () {
 $("#lienzo").droppable({
     drop: function (event, ui) {
         $("#hechoPlant").css("display", "block");
-
+        $("#menuGenerar").css("display", "block");
         $(this).attr('src', "../Plantillas/PlantillasHTML/" + idPlantClicked + ".html");
         $(".tarjetaPlantilla").each(function(){
             if ($(this).attr('id') == idPlantClicked) {

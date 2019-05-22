@@ -8,7 +8,7 @@ h1 {
     @include centrarFlex;
     @include formulario;
 
-    form  p {
+    form  p:last-child {
         margin-top: 40px;
         margin-bottom: 0;
         font-weight: bolder;
@@ -16,11 +16,12 @@ h1 {
     }
 
     .error > p {
-        margin: 0px;
+        margin: 0px !important;
+
     }
 
     .correcto > p {
-        margin: 0px;
+        margin: 0px !important;
     }
 }
 

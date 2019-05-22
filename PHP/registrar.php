@@ -63,6 +63,38 @@
                 <h1><i class="fas fa-user-plus"></i> Registro en EasyWEB</h1>
                 <p>Al crear un perfil en EasyWEB accedes a la creacción de tus propios diseños y compartir tus dudas y comentarios en nuestros chats</p>
                 <form action="registrar.php" name="registro" method="post" id="formSesion">
+                    <?php
+
+                        if (isset($_POST['btnRegistro'])) { 
+                            $usuario = $_POST['usuario'];
+                            $nombre = $_POST['nombre'];
+                            $ape1 = $_POST['apellido1'];
+                            $ape2 = $_POST['apellido2'];
+                            $email = $_POST['email'];
+                            $pass = $_POST['pass'];
+                            $confPass = $_POST['confPass'];
+
+                            $existeUsuario = $objetoRegistro->existeUsuario($usuario);
+                            $existeMail = $objetoRegistro->existeMail($email);
+
+                            if ($usuario == '' || $nombre == '' || $ape1 == '' || $email == '' || $pass == '' || $confPass == '') {
+                                echo '<div class="error"><p>No puede haber campos vacíos</p></div>';
+                            } else {
+                                if ($existeUsuario === true) {
+                                    echo '<div class="error"><p>Usuario ya registrado en easyWEB</p></div>';
+                                } else if ($existeMail === true) {
+                                    echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
+                                } else if (strlen($pass) < 8) {
+                                    echo '<div class="error"><p>La contraseña debe tener mínimo 8 caracteres</p></div>';
+                                } else if ($pass != $confPass) {
+                                    echo '<div class="error"><p>Contraseñas diferentes</p></div>';
+                                } else {
+                                    $registroUsuario = $objetoRegistro->registrarUsuario($usuario, $nombre, $ape1, $ape2, $email, password_hash ( $pass , PASSWORD_DEFAULT));
+                                }
+                            }
+                        }
+
+                    ?>
                     <label for="usuario">Usuario (*)</label>
                     <input type="text" name="usuario" id="usuario">
                     <label for="nombre">Nombre (*)</label>
@@ -80,38 +112,7 @@
                     <input type="button" value="Borrar campos" id="btnReset">
                     <input type="submit" value="Registrarse" name="btnRegistro">
                     <p>Los campos marcados con * son obligatorios de completar.</p>
-                    <?php
-
-                    if (isset($_POST['btnRegistro'])) { 
-                        $usuario = $_POST['usuario'];
-                        $nombre = $_POST['nombre'];
-                        $ape1 = $_POST['apellido1'];
-                        $ape2 = $_POST['apellido2'];
-                        $email = $_POST['email'];
-                        $pass = $_POST['pass'];
-                        $confPass = $_POST['confPass'];
-
-                        $existeUsuario = $objetoRegistro->existeUsuario($usuario);
-                        $existeMail = $objetoRegistro->existeMail($email);
-
-                        if ($usuario == '' || $nombre == '' || $ape1 == '' || $email == '' || $pass == '' || $confPass == '') {
-                            echo '<div class="error"><p>No puede haber campos vacíos</p></div>';
-                        } else {
-                            if ($existeUsuario === true) {
-                                echo '<div class="error"><p>Usuario ya registrado en easyWEB</p></div>';
-                            } else if ($existeMail === true) {
-                                echo '<div class="error"><p>EMail ya registrado en easyWEB</p></div>';
-                            } else if (strlen($pass) < 8) {
-                                echo '<div class="error"><p>La contraseña debe tener mínimo 8 caracteres</p></div>';
-                            } else if ($pass != $confPass) {
-                                echo '<div class="error"><p>Contraseñas diferentes</p></div>';
-                            } else {
-                                $registroUsuario = $objetoRegistro->registrarUsuario($usuario, $nombre, $ape1, $ape2, $email, $pass);
-                            }
-                        }
-                    }
-
-                ?>
+                    
                 </form>  
                 
                 

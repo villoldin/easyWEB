@@ -6,19 +6,19 @@
 
         public function __contruct() {
             parent::__construct();
-        }
+        }         
 
-        // Comprueba si existe el usuario
+        // Comprueba si existe el usuario y verifica la contraseña
 
-        public function existeUsuario($user,$pass) {
-            $sql = "SELECT COUNT(*) as 'cont' FROM USUARIOS WHERE USUARIO='$user' and CONTRASEÑA='$pass';";
+        public function verificarPass($user, $pass) {
+            $sql = "SELECT CONTRASEÑA FROM USUARIOS WHERE USUARIO='$user';";
             $resultado = $this->conexion_db->query($sql);
             $existe = $resultado->fetch_all(MYSQLI_ASSOC);
-            if($existe[0]['cont'] > 0){
+            if(password_verify($pass, $existe[0]['CONTRASEÑA'])){
                 return true;
             }
             return false;            
-        }       
+        }     
 
         // Comprueba si el usuario es administrador
 

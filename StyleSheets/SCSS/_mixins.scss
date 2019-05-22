@@ -76,6 +76,7 @@
             color: $colorPrincipal;   
             margin-top: 15px;
             box-shadow: $sombraCaja;
+            transition: 0.3s;
         }
 
         @media (max-width: 1000px) {  
@@ -103,7 +104,6 @@
     width: 70%;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
     margin-bottom: 20px;
     color: white;
     background: $colorPrincipal;
@@ -121,7 +121,6 @@
     width: 70%;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
     margin-bottom: 20px;
     color: white;
     background: rgb(17, 146, 17);

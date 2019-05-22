@@ -38,7 +38,8 @@ h1 {
             button:hover {
                 background: white;
                 color: $colorPrincipal;  
-                box-shadow: $sombraCaja;            
+                box-shadow: $sombraCaja;     
+                transition: 0.3s;       
             }
 
        }
