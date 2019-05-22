@@ -1,6 +1,10 @@
 @import "_variables.scss";
 @import "_mixins.scss";
 
+* {
+    outline: none;
+}
+
 body {
     font-family: $fuente;
 }
