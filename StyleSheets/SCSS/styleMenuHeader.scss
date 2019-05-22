@@ -50,6 +50,10 @@ body {
         transition: 0.3s;
     }
 
+    .navbar-toggler:focus {
+        outline: none !important;
+    }
+
     a {
         color: white !important;
         font-size: 120%;

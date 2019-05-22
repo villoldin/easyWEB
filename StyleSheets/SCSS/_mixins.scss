@@ -6,7 +6,8 @@
 @mixin estiloTitulo {
     color: $colorPrincipal;
     font-weight: bolder;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     padding-bottom: 5px;
     padding-left: 10px;
     text-align: center;
