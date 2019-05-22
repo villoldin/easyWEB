@@ -1,8 +1,8 @@
 @import "_variables.scss";
 @import "_mixins.scss";
 
-* {
-    outline: none;
+*:focus {
+    outline: none !important;
 }
 
 body {
