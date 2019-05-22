@@ -19,5 +19,5 @@ $(java).click(function (e) {
 });
 
 $(diseño).click(function (e) { 
-    location.href ="chatDiseño.php";
+    location.href ="chatDiseno.php";
 });

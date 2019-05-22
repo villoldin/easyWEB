@@ -104,12 +104,6 @@
                 </form>      
                 <h1><i class="fas fa-key"></i> Cambiar contraseña</h1>          
                 <form action="" name="cambioPass" method="post">
-                    <label for="pass">Nueva contraseña</label>
-                    <input type="password" name="pass" id="pass">
-                    <label for="nombre">Confirmar contraseña</label>
-                    <input type="password" name="confPass" id="confPass">
-                    <input type="submit" name="btnCambiar" value="Cambiar contraseña">
-
                     <?php
 
                         if (isset($_POST['btnCambiar'])) {
@@ -130,13 +124,14 @@
                         }
                         
                     ?>
-
+                    <label for="pass">Nueva contraseña</label>
+                    <input type="password" name="pass" id="pass">
+                    <label for="nombre">Confirmar contraseña</label>
+                    <input type="password" name="confPass" id="confPass">
+                    <input type="submit" name="btnCambiar" value="Cambiar contraseña">
                 </form>
                 <h1><i class="fas fa-user-shield"></i> Hacer a un usuario Administrador</h1>
                 <form action="administrador.php" name="hacerAdmin" method="post">
-                    <label for="usuarioAdmin">Usuario para administrador</label>
-                    <input type="text" name="usuarioAdmin" id="usuario">                    
-                    <input type="submit" name="btnAddAdmin" value="Hacer administrador">
 
                     <?php
 
@@ -154,15 +149,15 @@
                                 }
                             }
                         }
-                        
+
                     ?>
 
+                    <label for="usuarioAdmin">Usuario para administrador</label>
+                    <input type="text" name="usuarioAdmin" id="usuario">                    
+                    <input type="submit" name="btnAddAdmin" value="Hacer administrador">
                 </form>
                 <h1><i class="fas fa-user-times"></i> Borrar usuario</h1>
                 <form action="administrador.php" name="borrarUser" method="post">
-                    <label for="usuarioBorrar">Usuario a borrar</label>
-                    <input type="text" name="usuarioBorrar" id="usuario">                    
-                    <input type="submit" name="btnDeleteUser" value="Borrar usuario">
 
                     <?php
 
@@ -180,9 +175,12 @@
                                 }
                             }
                         }
-                        
+
                     ?>
 
+                    <label for="usuarioBorrar">Usuario a borrar</label>
+                    <input type="text" name="usuarioBorrar" id="usuario">                    
+                    <input type="submit" name="btnDeleteUser" value="Borrar usuario">
                 </form>
             </div>
         </div>

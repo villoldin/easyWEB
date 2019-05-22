@@ -73,7 +73,7 @@
             <div class="col-md-12">
                 <h1><i class="fab fa-sass"></i> Chat Diseño</h1>
                 <div class='col-md-12' id='formPublicacion'>
-                    <form action="chatDiseño.php" method="post">
+                    <form action="chatDiseno.php" method="post">
                         <input type="text" name="publicacion" id="publicacion" placeholder="Escribe tu publicación ...">
                         <input type="submit" value="Publicar" name="btnPublicar" id="publicar">
                     </form>
@@ -85,12 +85,13 @@
                             if ($publicacion == "") {
                                 echo '<div class="error"><p>No puedes publicar algo vacío</p></div>';
                             } else {
+                                date_default_timezone_set('Europe/Madrid');
                                 $fecha = date("Y-m-d");
                                 $horaActual = date("H:i:s");
                                 $fecha = date("Y-m-d H:i:s", strtotime($fecha . $horaActual));
                                 $publicar = $objetoChat->publicar($usuario, $publicacion, $fecha, $tema);
                                 $publicar = $objetoChat->actualizarPublicaciones($usuario);
-                                header('Location: chatDiseño.php');
+                                header('Location: chatDiseno.php');
                             }
                             
                         }

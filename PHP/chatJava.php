@@ -85,6 +85,7 @@
                             if ($publicacion == "") {
                                 echo '<div class="error"><p>No puedes publicar algo vacío</p></div>';
                             } else {
+                                date_default_timezone_set('Europe/Madrid');
                                 $fecha = date("Y-m-d");
                                 $horaActual = date("H:i:s");
                                 $fecha = date("Y-m-d H:i:s", strtotime($fecha . $horaActual));
